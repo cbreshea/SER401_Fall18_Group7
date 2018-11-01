@@ -1,3 +1,5 @@
+//https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use
+//https://www.youtube.com/watch?v=KBKcZLF59kY
 //include to use built in functions
 #include <Adafruit_NeoPixel.h>
 //Number of NeoPixels in use
