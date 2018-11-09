@@ -14,7 +14,6 @@
 #include <ArduinoJson.h>
 
 void setup() {
-  // put your setup code here, to run once:
 
 }
 
@@ -29,4 +28,24 @@ void loop() {
   jsonObject["Weight"] = 230;
   jsonObject["Age"] = "Old";
 
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //This is all that is required to decode a json object
+
+  StaticJsonDocument<200> Document2;
+
+  //Creates Json string
+  char jsonString[] = "{\"Animal\":\"Deer\",\"Health\":\"Fair\",\"Weight\":1351824120,\"Health\":\"Old\"}"; 
+
+  //Decodes the Jsonstring
+  JsonObject& jsonObject2 = jsonBuffer.parseObject(jsonString);
+  checkDecode(jsonObject2);
+
+}
+
+//checks to see if the decoding was successful
+bool checkDecode(JsonObject x){
+  if(!x.success()) {
+    return false;
+  }
+  return true;
 }
