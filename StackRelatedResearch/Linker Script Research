@@ -1,0 +1,24 @@
+//References and Resources
+	*	https://www.embeddedrelated.com/showarticle/900.php
+	*	https://www.ele.uva.es/~jesus/hardware_empotrado/Compiler.pdf
+	*	https://www.youtube.com/watch?v=OcsLl_FuXwg&t=113s
+	*	https://sourceware.org/binutils/docs/ld/Scripts.html
+	*	https://www.math.utah.edu/docs/info/ld_3.html
+
+//Overview
+	*	Linker script generates map file
+	*	A linker takes several input files and combines their contents to make 
+		a single output file.
+	*	Useful for determining how memory is being mapped to determine 
+	 	optimizations or size restricitons
+	*	Different linker spripts are used depending on if the program is
+		stored in Flash or RAM
+
+//Linker Script terms
+	*	object file- every input file is considered an object file
+	*	executable- the output file
+	*	input section- a portion of an input file
+	*	output section- a portion of the output file
+	*	VMA- Virtual memory address, address of an output section when the
+			 output file is run
+	*	LMA- Load memory address, the address used to load the section
