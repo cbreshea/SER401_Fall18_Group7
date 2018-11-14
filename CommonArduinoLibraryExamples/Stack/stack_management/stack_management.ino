@@ -19,7 +19,10 @@ void setup() {
 
   Serial.println("Here is a string: " + msg);
 
+  //push the message onto the stack
+  for(int i = 0; i < msg.length(); i++){
+    stack.push(msg.charAt(i));
+  }
+
 }
-void loop(){
-  
-}
+void loop(){ }
