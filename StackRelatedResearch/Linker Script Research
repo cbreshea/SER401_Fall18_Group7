@@ -22,3 +22,25 @@
 	*	VMA- Virtual memory address, address of an output section when the
 			 output file is run
 	*	LMA- Load memory address, the address used to load the section
+
+//Basic example 
+	Found At:
+		https://www.uni-regensburg.de/EDV/kurs_info/brf09510/kurs_info/pdf/ld.pdf
+		https://sourceware.org/binutils/docs/ld/Simple-Example.html#Simple-Example
+		https://www.math.utah.edu/docs/info/ld_3.html
+
+	SECTIONS							(LINE 1)
+{
+  . = 0x10000;							(LINE 2)
+  .text : { *(.text) }					(LINE 3)
+  . = 0x8000000;						(LINE 4)
+  .data : { *(.data) }					(LINE 5)
+  .bss : { *(.bss) }					(LINE 6)
+}
+
+	*Line 1: Says the the SECTIONS command is being used. Proceeding lines declare the values of the symbols associated with SECTIONS
+	*Line 2: Gives the address in memory of where the code should be loaded.
+	*Line 3: Indicates that all text in the input files are output
+	*Line 4: Indicates the address where data will be outputted too
+	*Line 5: Outputs the data to the 0x8000000 address in memory.
+	*Line 6: Outputs the bss at the end of the data output.
