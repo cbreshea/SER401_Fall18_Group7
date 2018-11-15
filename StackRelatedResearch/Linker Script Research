@@ -37,10 +37,28 @@
   .data : { *(.data) }					(LINE 5)
   .bss : { *(.bss) }					(LINE 6)
 }
-
+	//Line by line explanation
 	*Line 1: Says the the SECTIONS command is being used. Proceeding lines declare the values of the symbols associated with SECTIONS
 	*Line 2: Gives the address in memory of where the code should be loaded.
 	*Line 3: Indicates that all text in the input files are output
 	*Line 4: Indicates the address where data will be outputted too
 	*Line 5: Outputs the data to the 0x8000000 address in memory.
 	*Line 6: Outputs the bss at the end of the data output.
+
+//Custom more advanced example
+
+ENTRY(main)
+
+MEMORY
+{
+	FLASH : ORIGIN = 0x0200000, LENGTH = 64K
+	RAM : ORIGIN = 0x40000000, LENGTH = 16K
+}
+
+	SECTIONS
+{
+  . = ALIGN(4);
+  .text : { *(.text) } > RAM
+  .data : { *(.data) } > RAM
+  .bss : { *(.bss) } > RAM
+}
