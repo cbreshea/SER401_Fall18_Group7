@@ -1,0 +1,19 @@
+NOTES ON ARDUINO IoT
+
+//References
+	*https://www.circuito.io/blog/iot-projects/
+	*https://www.instructables.com/id/Getting-Started-With-the-ESP8266-ESP-01/
+	*https://www.instructables.com/id/ARDUINO-IOT-1/
+	http://www.teomaragakis.com/hardware/electronics/how-to-connect-an-esp8266-to-an-arduino-uno/
+
+//Popular components used for an IoT project
+	*ESP8266-01 wifi module
+	*ENC28J60 Ethernet module
+	*HC-05 Bluetooth module
+	*NRF24L01 Transceiver Module
+
+//Steps in a porject
+	*connect Arduino to IoT component (varies greatly by component)
+	*Include library related to selected component
+		i.e #include <ESP8266WiFi.h>
+	*In code connnect to other device (phone, computer, etc.) using library
