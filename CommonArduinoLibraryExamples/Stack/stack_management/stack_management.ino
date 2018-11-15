@@ -10,8 +10,6 @@ StackArray<char> stack;
 
 //Depending on what chip/board you are using you can use up a lot of space very quickly
 
-//This puts 33 bytes into SRAM
-char message[] = "I support the Cape Wind project.";
 
 void setup() {
   //start communication
@@ -23,6 +21,6 @@ void setup() {
   for(int i = 0; i < msg.length(); i++){
     stack.push(msg.charAt(i));
   }
-
+//sketch uses 3962 bytes and global variables use 344 bytes
 }
 void loop(){ }

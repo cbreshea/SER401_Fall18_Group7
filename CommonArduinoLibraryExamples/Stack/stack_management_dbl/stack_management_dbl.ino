@@ -1,6 +1,6 @@
 #include <StackArray.h>
-//global variables use up 27 bytes before loop()
-//sketch uses 1666 bytes before loop()
+//global variables use up 27 bytes before setup()
+//sketch uses 1666 bytes before setup()
 StackArray <double> stack;
 
 double a = 2.0;
