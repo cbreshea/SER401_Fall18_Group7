@@ -18,6 +18,7 @@ int main ()
 	s.push(10); 
 	s.push(30); 
 	s.push(50);
+	
 
 	cout << "This is a rough cpp example of what stack painting is" << endl;
 	cout << "Here we are pushing the following: 10, 30 , 50 in that order to the stack" <<  endl;
@@ -25,7 +26,11 @@ int main ()
 	showstack(s); 
 
 
-	cout << "bottom of stack in Arduino is " << s.top(); 
+	cout << "bottom of stack in Arduino is " << s.top() << endl; 
+
+	cout << "the pointer is pointed after 50 and it grows on the bottom";
+
+	cout << "size" << s.size();
 
 
 	return 0; 
