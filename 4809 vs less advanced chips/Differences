@@ -1,0 +1,23 @@
+Differences between ATMEGA4809 and microcontrollers less advanced than it:
+	*ATmega4809 is used in the Atmega4809 xplained pro and the upcoming Arduino wifi rev 2
+	*The 4809 is unique in that it supports peripheral multiplexing
+	*peripheral multiplexing gives developers the ability to move peripherals around to other pins to avoid conflicts
+	*peripheral multiplexing on the 4809 means that just becuase a funtionality is being used on a 4809 we can't tell which pin is being used
+		*we do however still know that the funtionality being used and the number of pins assoiciated with that funtionality.
+			*i.e pin requirement: SPI > UART
+
+ATMega4809 vs ATmega 328p specs
+	*Program Memory Size (KB)
+		48 | 32
+	*EEPROM
+		256 | 1024
+	*input capture
+		16 | 1
+	*PWM
+		11 | 6
+	*UART
+		4 | 1
+	*SPI
+		1 | 2
+	*I2C
+		1 | 1
