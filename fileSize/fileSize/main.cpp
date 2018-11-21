@@ -21,10 +21,14 @@ std::ifstream::pos_type filesize(const char* file)
 
 
 int main(int argc, const char * argv[]) {
-    // insert code here..
     
+    if(argc > 1){
     // Read example hex file given
-    cout << filesize("FastLEDRainbow.ino.standard.hex") << " bytes" << std::endl;
+    cout << filesize(argv[1]) << " bytes" << std::endl;
+    }
+    else{
+      cout << "Please enter a filename.";
+    }
     return 0;
 }
 
