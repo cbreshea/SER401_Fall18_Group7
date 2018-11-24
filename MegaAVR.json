@@ -13,7 +13,7 @@
 		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
 		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
 		"Pin Count" : 32,
-		"Low Power" : true,
+		"Low Power" : true
 
     },
 
@@ -31,7 +31,7 @@
 		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
 		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
 		"Pin Count" : 32,
-		"Low Power" : true,
+		"Low Power" : true
 
     },
 
@@ -49,7 +49,7 @@
 		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
 		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
 		"Pin Count" : 44,
-		"Low Power" : true,
+		"Low Power" : true
 
     },
 
@@ -66,7 +66,7 @@
 		"Number of Comparators" : 1,
 		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
 		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
-		"Pin Count" : 44,
+		"Pin Count" : 44
 	
     },
 
@@ -83,7 +83,7 @@
 		"Number of Comparators" : 1,
 		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
 		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
-		"Pin Count" : 100,
+		"Pin Count" : 100
 	
     }
 
