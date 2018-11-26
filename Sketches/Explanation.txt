@@ -1,0 +1,12 @@
+Steps to configure bootloader
+*To program the bootloader Atmel studio 7 was used
+*Under TOOLS -> DEVICE PROGRAMMING
+*Fuse Register
+	EXTENDED = 0xFD
+	HIGH = DE
+	LOW = E0
+*Memories
+	Flash = optiboot_xplained328p
+*Atmel AVR Xplained-minis installed under Boards Manager
+*other settings shown in screen shot
+	
