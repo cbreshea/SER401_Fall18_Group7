@@ -18,8 +18,7 @@ int main(int argc, const char * argv[]) {
     json ATmega1284 = j["ATmega1284"];
     json ATmega2560 = j["ATmega2560"];
 
-
-
+  
     int ATmega168p_memory = ATmega168p["Program Memory Size(KB)"];
     int ATmega328p_memory = ATmega328p["Program Memory Size(KB)"];
     int ATmega644p_memory = ATmega644p["Program Memory Size(KB)"];
