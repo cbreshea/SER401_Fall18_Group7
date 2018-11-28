@@ -1,0 +1,87 @@
+{
+	"Arduino_Mega_2560_Rev3" : { 
+		
+		"Microcontroller" : "ATmega2560",
+        "Operating Voltage" : 5,
+        "Input Voltage (recommended)" : {"recommended" : [7, 8, 9, 10, 11, 12]}, 
+        "Input Voltage (limit)" : {"limit" : [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]},
+        "Digital I/O Pins" : 54,
+        "Analog Input Pins" : 16,
+        "DC Current per I/O Pin" : 20,
+        "DC Current for 3.3V Pin" : 50,
+        "Flash Memory" : 256,
+        "SRAM" : 8,
+        "EEPROM" : 4,
+        "Clock Speed" : 16,
+        "LED_BUILTIN" : 13,
+        "Length" : 101.52,
+        "Width" : 53.3,
+        "Weight" : 37
+
+    },
+
+    "Arduino_Uno_Rev3" : { 
+		
+		"Microcontroller" : "ATmega328p",
+        "Operating Voltage" : 5,
+        "Input Voltage (recommended)" : {"recommended" : [7, 8, 9, 10, 11, 12]}, 
+        "Input Voltage (limit)" : {"limit" : [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]},
+        "Digital I/O Pins" : 14,
+        "PWM Digital I/O Pins" : 6,
+        "Analog Input Pins" : 6,
+        "DC Current per I/O Pin" : 20,
+        "DC Current for 3.3V Pin" : 50,
+        "Flash Memory" : 32,
+        "SRAM" : 2,
+        "EEPROM" : 1,
+        "Clock Speed" : 16,
+        "LED_BUILTIN" : 13,
+        "Length" : 68.6,
+        "Width" : 53.4,
+        "Weight" : 25
+
+    },
+
+    "Arduino_Uno_Rev3_SMD" : { 
+		
+		"Microcontroller" : "ATmega328p",
+        "Operating Voltage" : 5,
+        "Input Voltage (recommended)" : {"recommended" : [7, 8, 9, 10, 11, 12]}, 
+        "Input Voltage (limit)" : {"limit" : [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]},
+        "Digital I/O Pins" : 14,
+        "PWM Digital I/O Pins" : 6,
+        "Analog Input Pins" : 6,
+        "DC Current per I/O Pin" : 20,
+        "DC Current for 3.3V Pin" : 50,
+        "Flash Memory" : 32,
+        "SRAM" : 2,
+        "EEPROM" : 1,
+        "Clock Speed" : 16,
+        "LED_BUILTIN" : 13,
+        "Length" : 68.6,
+        "Width" : 53.4,
+        "Weight" : 25
+
+    },
+
+    "Arduino_Uno_Wifi_Rev2" : { 
+		
+		"Microcontroller" : "ATmega4809",
+        "Operating Voltage" : 5,
+        "Input Voltage (recommended)" : {"recommended" : [7, 8, 9, 10, 11, 12]}, 
+        "Input Voltage (limit)" : {"limit" : [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]},
+        "Digital I/O Pins" : 14,
+        "PWM Digital I/O Pins" : 6,
+        "Analog Input Pins" : 6,
+        "DC Current per I/O Pin" : 20,
+        "DC Current for 3.3V Pin" : 50,
+        "Flash Memory" : 48,
+        "SRAM" : 6144,
+        "EEPROM" : 256,
+        "Clock Speed" : 16,
+        "LED_BUILTIN" : 25,
+        "Length" : 68.6,
+        "Width" : 53.4,
+        "Weight" : 25
+	
+    }
