@@ -1,0 +1,11 @@
+Failed to enter programming mode. ispEnterProgMode: Error status received: Got 0xc0, expected 0x00 (Command has failed to execute on the tool)
+
+Unable to enter programming mode. Verify device selection, interface settings, target power, security bit, and connections to the target device.
+
+Current solution research:
+
+https://electronics.stackexchange.com/questions/188311/avr-signature-doesnt-match-flash-address-0x0000-wrong
+
+https://www.avrfreaks.net/forum/resolved-atmel-ice-unable-start-debugwire-session
+
+https://www.olimex.com/forum/index.php?topic=5953.0
