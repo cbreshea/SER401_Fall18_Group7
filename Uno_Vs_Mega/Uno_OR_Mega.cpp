@@ -25,8 +25,38 @@ int main(int argc, const char * argv[]){
 	int Arduino_Uno_Wifi_Rev2_pins = Arduino_Uno_Wifi_Rev2["Digital I/O Pins"];
 	
 	
-	std::cout << "Lets assume the users project is using 14 digital I/O pins is using 14 pins but";
-	std::cout << "they are using an Arduino Mega 2560 with too many unused digital pins";
+	int Arduino_Uno_Rev3_SMD_Apins = Arduino_Uno_Rev3_SMD["Analog Input Pins"];
+	int Arduino_Uno_Wifi_Rev2_Apins = Arduino_Uno_Wifi_Rev2["Analog Input Pins"];
+	
+	/*
+	Since I am not reading in a hex file just yet I am just going to
+	ask the user for the information on the project and then determine
+	the best board to use.
+	*/
+	
+	//get the user info 
+	int digitalPins;
+	int analogPins;
+	std::cout << "How many Digital pins does your project use?";
+	std::cin >> digitalPins;
+	std::cout << "How many analog pins does your project use?";
+	std::cin >> analogPins;
+	
+	
+	/*
+	Here we are just going to take the users input and loop through 
+	to determine what the best board to use is. 
+	This will be determined by measuring the amount of digital/analog pins the user is using in their project
+	*/
+	
+	if(digitalPins > 14 || analogPins > 6){
+		std::cout << "After running analysis on your project it has been determined that you use the Arduino Mega 2560 Rev3";
+						}else if(digitalPins < 14 || analogPins < 6){
+		std::cout << "After running analysis on your project it has been determined that you use the Arduino Uno Rev3";
+					
+	}
+	
+	
 	//std::cout << Arduino_Mega_2560_Rev3_pins << "\n";
 	
 	
