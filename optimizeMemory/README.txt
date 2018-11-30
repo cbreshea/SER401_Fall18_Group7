@@ -1,5 +1,6 @@
 // run on command line
 
-This program uses an external JSON parser called nlohmann. Make sure the json.hpp file (which you can get from the nlohmann GitHub page) is in the same directory as your main program. In your program, make sure you have #include "json.hpp". 
+This program determines which microchip has memory closest to the given sketch's memory using a difference. Use this difference to recommend the most optimal microchip based on memory size. 
 
 To Compile make sure to use -std=c++11 as a flag for g++
+

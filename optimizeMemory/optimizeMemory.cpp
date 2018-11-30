@@ -1,6 +1,9 @@
 #include <iostream>
 #include "json.hpp"
 #include <fstream>
+#include <math.h>
+
+int min(int *arr, int num);
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -71,11 +74,43 @@ int main(int argc, const char * argv[]) {
     memory_array[6] = ATtiny1617_memory;
     memory_array[7] = ATtiny817_memory;
 
+      std::cout << "The memory sizes of each chip" << "\n";
+
     for(int i = 0; i < arraySize; i++){
         std::cout << memory_array[i] << "\n";
     }
 
+    int val = min(memory_array, sketch_memory);
+
+    std::cout << " "<< "\n";
+
+
+    std::cout << "The given memory is 14000 bytes, The smallest difference is : " << val << "\n";
+
+
+    
 
 
     return 0;
+}
+
+
+int min(int *arr, int num){
+
+	int diff[8];
+
+	for(int i = 0; i < 8; i++){
+        diff[i] = abs(arr[i] - num); 
+    }
+
+    int smallest = diff[0];
+
+    for(int i = 0; i < 8; i++){
+        if(diff[i] < smallest){
+        	smallest = diff[i]; 
+        }
+    }
+
+
+	return smallest;
 }
