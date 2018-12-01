@@ -9,3 +9,17 @@ https://electronics.stackexchange.com/questions/188311/avr-signature-doesnt-matc
 https://www.avrfreaks.net/forum/resolved-atmel-ice-unable-start-debugwire-session
 
 https://www.olimex.com/forum/index.php?topic=5953.0
+
+Day 2 attempting to figure out Atmel ICE:
+	known: 
+		*ATmega168 is compatible, but it does change defualt fuses on 168 making it no longer work with AVR programmer.
+		*Atmel studio 7 handles most of the ICE setup I.E fuses
+		*Atmel studio 7 was installed before configuring ICE, so setting should for the most part be correct
+		*the MCU is recieving power
+		*instuctions for this are TERRIBLE
+	Unknown:
+		*if the ICE is connected correctly. The red and green lights are on. Just green is supposed to be on?
+		*Do the 168 fuses need to be changed even more? changed to what? MCU dependent?
+	More references:
+		*https://www.youtube.com/watch?v=xDUG7aJXL9k
+		*http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-ICE_UserGuide.pdf
