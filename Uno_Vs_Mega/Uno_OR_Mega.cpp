@@ -35,6 +35,8 @@ int main(int argc, const char * argv[]){
 	*/
 	
 	//get the user info 
+	
+	//Pins
 	int digitalPins;
 	int analogPins;
 	std::cout << "How many Digital pins does your project use?";
@@ -42,6 +44,19 @@ int main(int argc, const char * argv[]){
 	std::cout << "How many analog pins does your project use?";
 	std::cin >> analogPins;
 	
+	//Amount of memory
+	int memory;
+	std::cout << "How much memory does the project use?";
+	std::cin >> memory;
+	
+	//SRAM and EEPROM
+	int sram;
+	int eeprom;
+	
+	std::cout << "Amount of SRAM?";
+	std::cin >> sram;
+	std::cout << "amount of EEPROM?";
+	std::cin >> eeprom;
 	
 	/*
 	Here we are just going to take the users input and loop through 
