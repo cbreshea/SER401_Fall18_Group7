@@ -98,19 +98,25 @@ int main(int argc, const char * argv[]) {
 int min(int *arr, int num){
 
 	int diff[8];
+    int sum = 0;
 
 	for(int i = 0; i < 8; i++){
-        diff[i] = abs(arr[i] - num); 
+        sum = arr[i] - num;
+        // check if the difference is positive. This means the chip has the memory capacity 
+        if(sum >= 0){
+            diff[i] = sum;
+        }else{
+            diff[i] = -1;
+        }
     }
 
     int smallest = diff[0];
 
     for(int i = 0; i < 8; i++){
-        if(diff[i] < smallest){
+        if(diff[i] < smallest && diff[i] != -1){
         	smallest = diff[i]; 
         }
     }
 
-
-	return smallest;
+    return smallest;
 }
