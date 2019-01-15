@@ -28,6 +28,16 @@ int main(int argc, const char * argv[]){
 	int Arduino_Uno_Rev3_SMD_Apins = Arduino_Uno_Rev3_SMD["Analog Input Pins"];
 	int Arduino_Uno_Wifi_Rev2_Apins = Arduino_Uno_Wifi_Rev2["Analog Input Pins"];
 	
+	int Arduino_Mega_2560_Rev3_memory = Arduino_Mega_2560_Rev3["Flash Memory"];
+	int Arduino_Uno_Rev3_memory = Arduino_Uno_Rev3["Flash Memory"];
+	int Arduino_Uno_Rev3_SMD_memory = Arduino_Uno_Rev3_SMD["Flash Memory"];
+	int Arduino_Uno_Wifi_Rev2_memory = Arduino_Uno_Wifi_Rev2["Flash Memory"];
+	
+	std::cout << Arduino_Mega_2560_Rev3_memory;
+	std::cout << Arduino_Uno_Rev3_memory;
+	std::cout << Arduino_Uno_Rev3_SMD_memory;
+	std::cout << Arduino_Uno_Wifi_Rev2_memory;
+	
 	/*
 	Since I am not reading in a hex file just yet I am just going to
 	ask the user for the information on the project and then determine
@@ -71,7 +81,7 @@ int main(int argc, const char * argv[]){
 					
 	}
 	
-	
+//	if(memory > 256 )
 	//std::cout << Arduino_Mega_2560_Rev3_pins << "\n";
 	
 	
