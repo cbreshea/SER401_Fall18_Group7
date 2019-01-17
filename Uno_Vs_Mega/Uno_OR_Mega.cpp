@@ -18,20 +18,31 @@ int main(int argc, const char * argv[]){
 	json Arduino_Uno_Rev3_SMD = j["Arduino_Uno_Rev3_SMD"];
 	json Arduino_Uno_Wifi_Rev2 = j["Arduino_Uno_Wifi_Rev2"];
 	
-	
+	//digital pins from boards
 	int Arduino_Mega_2560_Rev3_pins = Arduino_Mega_2560_Rev3["Digital I/O Pins"];
 	int Arduino_Uno_Rev3_pins = Arduino_Uno_Rev3["Digital I/O Pins"];
 	int Arduino_Uno_Rev3_SMD_pins = Arduino_Uno_Rev3_SMD["Digital I/O Pins"];
 	int Arduino_Uno_Wifi_Rev2_pins = Arduino_Uno_Wifi_Rev2["Digital I/O Pins"];
 	
-	
+	//analog pins from boards
 	int Arduino_Uno_Rev3_SMD_Apins = Arduino_Uno_Rev3_SMD["Analog Input Pins"];
 	int Arduino_Uno_Wifi_Rev2_Apins = Arduino_Uno_Wifi_Rev2["Analog Input Pins"];
+	int Arduino_Mega_2560_Rev3_Apins = Arduino_Mega_2560_Rev3["Analog Input Pins"];
+	int Arduino_Uno_Rev3_Apins = Arduino_Uno_Rev3["Analog Input Pins"];
 	
+	
+	//memory from boards
 	int Arduino_Mega_2560_Rev3_memory = Arduino_Mega_2560_Rev3["Flash Memory"];
 	int Arduino_Uno_Rev3_memory = Arduino_Uno_Rev3["Flash Memory"];
 	int Arduino_Uno_Rev3_SMD_memory = Arduino_Uno_Rev3_SMD["Flash Memory"];
 	int Arduino_Uno_Wifi_Rev2_memory = Arduino_Uno_Wifi_Rev2["Flash Memory"];
+	
+	
+	//EEPROM from boards
+	int Arduino_Mega_2560_Rev3_eeprom = Arduino_Mega_2560_Rev3["EEPROM"];
+	int Arduino_Uno_Rev3_eeprom = Arduino_Uno_Rev3["EEPROM"];
+	int Arduino_Uno_Rev3_SMD_eeprom = Arduino_Uno_Rev3_SMD["EEPROM"];
+	int Arduino_Uno_Wifi_Rev2_eeprom = Arduino_Uno_Wifi_Rev2["EEPROM"];
 	
 	std::cout << Arduino_Mega_2560_Rev3_memory;
 	std::cout << Arduino_Uno_Rev3_memory;
