@@ -44,6 +44,13 @@ int main(int argc, const char * argv[]){
 	int Arduino_Uno_Rev3_SMD_eeprom = Arduino_Uno_Rev3_SMD["EEPROM"];
 	int Arduino_Uno_Wifi_Rev2_eeprom = Arduino_Uno_Wifi_Rev2["EEPROM"];
 	
+	
+	//SRAM from boards
+	int Arduino_Mega_2560_Rev3_sram = Arduino_Mega_2560_Rev3["SRAM"];
+	int Arduino_Uno_Rev3_sram = Arduino_Uno_Rev3["SRAM"];
+	int Arduino_Uno_Rev3_SMD_sram = Arduino_Uno_Rev3_SMD["SRAM"];
+	int Arduino_Uno_Wifi_Rev2_sram = Arduino_Uno_Wifi_Rev2["SRAM"];
+	
 	std::cout << Arduino_Mega_2560_Rev3_memory;
 	std::cout << Arduino_Uno_Rev3_memory;
 	std::cout << Arduino_Uno_Rev3_SMD_memory;
@@ -91,6 +98,7 @@ int main(int argc, const char * argv[]){
 		std::cout << "After running analysis on your project it has been determined that you use the Arduino Uno Rev3";
 					
 	}
+	
 	
 //	if(memory > 256 )
 	//std::cout << Arduino_Mega_2560_Rev3_pins << "\n";
