@@ -4,6 +4,8 @@
 #include <math.h>
 
 int min(int *arr, int num);
+void recommend(int num, int *arr);
+int sketch_memory = 14000;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -11,7 +13,7 @@ int main(int argc, const char * argv[]) {
 
 	using json = nlohmann::json;
 
-    int sketch_memory = 14000;
+   
 
 	std::ifstream i("MegaAVR.json");
     std::ifstream a("TinyAVR.json");
@@ -89,7 +91,7 @@ int main(int argc, const char * argv[]) {
     std::cout << "The given memory is 14000 bytes, The smallest difference is : " << val << "\n";
    
  	
- 	// hash map to match microchip name (key) and its memory(value)
+ 	/*// hash map to match microchip name (key) and its memory(value)
     std::map<std::string, int> m;
     m["Atmega168p"] = ATmega168p_memory;
     m["ATmega328p"] = ATmega328p_memory;
@@ -117,9 +119,10 @@ int main(int argc, const char * argv[]) {
 			std::cout << x.first << std::endl;
 		}
    
-	}
+	}*/
 
-
+    std::cout << "The microchip is: ";
+    recommend(sketch_memory, memory_array);
 
     return 0;
 }
@@ -150,4 +153,35 @@ int min(int *arr, int num){
 
     return smallest;
 }
+
+void recommend(int size, int *arr){
+
+	// hash map to match microchip name (key) and its memory(value)
+    std::map<std::string, int> m;
+    m["Atmega168p"] = arr[0];
+    m["ATmega328p"] = arr[1];
+    m["ATmega644p"] = arr[2];
+    m["ATmega1284"] = arr[3];
+    m["ATmega2560"] = arr[4];
+    m["ATtiny321"] = arr[5];
+    m["ATtiny1617"] = arr[6];
+    m["ATtiny817"] = arr[7];
+
+	std::cout << " "<< "\n";
+
+	std::string chip;
+
+	for (auto const& x : m)
+	{
+		if(x.second == (size+min(arr, sketch_memory))){
+
+			chip = x.first;
+		}
+   
+	}
+
+	std::cout << chip << "\n";
+
+}
+
 
