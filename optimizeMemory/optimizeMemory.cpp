@@ -30,6 +30,7 @@ int main(int argc, const char * argv[]) {
     json ATtiny1617 = b["ATtiny1617"];
     json ATtiny817 = b["ATtiny817"];
 
+    
   
     int ATmega168p_kb = ATmega168p["Program Memory Size(KB)"];
     int ATmega328p_kb = ATmega328p["Program Memory Size(KB)"];
@@ -86,9 +87,38 @@ int main(int argc, const char * argv[]) {
 
 
     std::cout << "The given memory is 14000 bytes, The smallest difference is : " << val << "\n";
-
+   
+ 	
+ 	// hash map to match microchip name (key) and its memory(value)
+    std::map<std::string, int> m;
+    m["Atmega168p"] = ATmega168p_memory;
+    m["ATmega328p"] = ATmega328p_memory;
+    m["ATmega644p"] = ATmega644p_memory;
+    m["ATmega1284"] = ATmega1284_memory;
+    m["ATmega2560"] = ATmega2560_memory;
+    m["ATtiny321"] = ATtiny3217_memory;
+    m["ATtiny1617"] = ATtiny1617_memory;
+    m["ATtiny817"] = ATtiny817_memory;
 
     
+    for (auto const& x : m)
+	{
+    	std::cout << x.first  // string (key)
+              << ':' 
+              << x.second // string's value 
+              << std::endl ;
+	}
+
+	std::cout << " "<< "\n";
+
+	for (auto const& x : m)
+	{
+		if(x.second == (14000+val)){
+			std::cout << x.first << std::endl;
+		}
+   
+	}
+
 
 
     return 0;
@@ -120,3 +150,4 @@ int min(int *arr, int num){
 
     return smallest;
 }
+
