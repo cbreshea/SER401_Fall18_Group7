@@ -5,7 +5,11 @@
 
 int main(int argc, const char * argv[]){
 	
+	//test variables
 	int tempProject = 14;
+	int tempDigital = 23;
+	int tempAnalog = 44;
+	int tempSram = 15;
 	
 	using json = nlohmann::json;
 	//JSON file for Arduino Boards
@@ -99,7 +103,13 @@ int main(int argc, const char * argv[]){
 					
 	}
 	
-	
+	//Based on SRAM
+	if(sram < 8 || sram == 8 ){
+		std::cout << "After running analysis on your project it has been determined that you use the Arduino Mega 2560 Rev3";
+						}else if(sram < 2 || sram == 2){
+		std::cout << "After running analysis on your project it has been determined that you use the Arduino Uno Rev3";
+					
+	}
 //	if(memory > 256 )
 	//std::cout << Arduino_Mega_2560_Rev3_pins << "\n";
 	
