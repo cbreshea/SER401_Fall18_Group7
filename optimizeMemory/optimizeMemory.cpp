@@ -5,7 +5,7 @@
 
 int min(int *arr, int num);
 void recommend(int num, int *arr);
-int sketch_memory = 14000;
+int sketch_memory = 31000;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -88,7 +88,7 @@ int main(int argc, const char * argv[]) {
     std::cout << " "<< "\n";
 
 
-    std::cout << "The given memory is 14000 bytes, The smallest difference is : " << val << "\n";
+    std::cout << "The given memory is 31000 bytes, The smallest difference is : " << val << "\n";
    
  	
  	/*// hash map to match microchip name (key) and its memory(value)
@@ -127,7 +127,7 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-
+// find the smallest difference between sketch memory and available. This is to find the closest chip with the memory capacity 
 int min(int *arr, int num){
 
 	int diff[8];
@@ -143,15 +143,22 @@ int min(int *arr, int num){
         }
     }
 
-    int smallest = diff[0];
+    int flag = 0;
+    int smallest = 2147483647; // largest int value
 
     for(int i = 0; i < 8; i++){
-        if(diff[i] < smallest && diff[i] != -1){
+        if(diff[i] < smallest && diff[i] > 0){
         	smallest = diff[i]; 
+            flag = 1; // a postive min was found
         }
     }
 
-    return smallest;
+    if(flag == 1){
+        return smallest;
+    }else{
+        return -1;
+    }
+
 }
 
 void recommend(int size, int *arr){
@@ -163,7 +170,7 @@ void recommend(int size, int *arr){
     m["ATmega644p"] = arr[2];
     m["ATmega1284"] = arr[3];
     m["ATmega2560"] = arr[4];
-    m["ATtiny321"] = arr[5];
+    m["ATtiny3217"] = arr[5];
     m["ATtiny1617"] = arr[6];
     m["ATtiny817"] = arr[7];
 
@@ -171,16 +178,22 @@ void recommend(int size, int *arr){
 
 	std::string chip;
 
-	for (auto const& x : m)
-	{
-		if(x.second == (size+min(arr, sketch_memory))){
+    if(min(arr, sketch_memory) == -1){
+        std::cout << "no chip meets requirements" << "\n";
+    }else{
+        for (auto const& x : m)
+        {
+            if(x.second == (size+min(arr, sketch_memory))){
 
-			chip = x.first;
-		}
+                chip = x.first;
+            }
    
-	}
+        }
 
-	std::cout << chip << "\n";
+        std::cout << chip << "\n";
+    }
+
+	
 
 }
 
