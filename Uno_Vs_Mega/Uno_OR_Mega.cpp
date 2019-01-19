@@ -96,6 +96,7 @@ int main(int argc, const char * argv[]){
 	This will be determined by measuring the amount of digital/analog pins the user is using in their project
 	*/
 	
+	std:cout << "Pins";
 	if(digitalPins > 14 || analogPins > 6){
 		std::cout << "After running analysis on your project it has been determined that you use the Arduino Mega 2560 Rev3";
 						}else if(digitalPins < 14 || analogPins < 6){
@@ -104,12 +105,31 @@ int main(int argc, const char * argv[]){
 	}
 	
 	//Based on SRAM
-	if(sram < 8 || sram == 8 ){
+	std::cout << "SRAM";
+	if(sram > 7 || sram == 8 ){
 		std::cout << "After running analysis on your project it has been determined that you use the Arduino Mega 2560 Rev3";
 						}else if(sram < 2 || sram == 2){
 		std::cout << "After running analysis on your project it has been determined that you use the Arduino Uno Rev3";
 					
 	}
+	
+	//based on EEPROM
+	std::cout << "EEPROM";
+	if(eeprom > 1 || eeprom == 4 ){
+		std::cout << "After running analysis on your project it has been determined that you use the Arduino Mega 2560 Rev3";
+						}else if(eeprom < 1 || eeprom == 1){
+		std::cout << "After running analysis on your project it has been determined that you use the Arduino Uno Rev3";
+					
+	}
+	//Based on flash memory
+	
+	if(memory > 32){
+		std::cout << "After running analysis on your project it has been determined that you use the Arduino Mega 2560 Rev3";
+						}else if(memory < 32){
+		std::cout << "After running analysis on your project it has been determined that you use the Arduino Uno Rev3";
+					
+	}
+	
 //	if(memory > 256 )
 	//std::cout << Arduino_Mega_2560_Rev3_pins << "\n";
 	
