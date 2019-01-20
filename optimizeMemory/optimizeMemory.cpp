@@ -5,7 +5,7 @@
 
 int min(int *arr, int num);
 void recommend(int num, int *arr);
-int sketch_memory = 300;
+int sketch_memory = 128000;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -26,6 +26,7 @@ int main(int argc, const char * argv[]) {
     json ATmega644p = j["ATmega644p"];
     json ATmega1284 = j["ATmega1284"];
     json ATmega2560 = j["ATmega2560"];
+	json ATmega4809 = j["ATmega4809"];
 
     //TinyAVRS
     //json ATtiny3217 = b["ATtiny3217"];
@@ -39,6 +40,7 @@ int main(int argc, const char * argv[]) {
     int ATmega644p_kb = ATmega644p["Program Memory Size(KB)"];
     int ATmega1284_kb = ATmega1284["Program Memory Size(KB)"];
     int ATmega2560_kb = ATmega2560["Program Memory Size(KB)"];
+	int ATmega4809_kb = ATmega4809["Program Memory Size(KB)"];
 
     //int ATtiny3217_kb = ATtiny3217["Program Memory Size(KB)"];
     //int ATtiny1617_kb = ATtiny1617["Program Memory Size(KB)"];
@@ -49,6 +51,7 @@ int main(int argc, const char * argv[]) {
     int ATmega644p_memory = ATmega644p_kb * 1000;
     int ATmega1284_memory = ATmega1284_kb * 1000;
     int ATmega2560_memory = ATmega2560_kb * 1000;
+	int ATmega4809_memory = ATmega4809_kb * 1000;
 
     //int ATtiny3217_memory = ATtiny3217_kb * 1000;
     //int ATtiny1617_memory = ATtiny1617_kb * 1000;
@@ -73,6 +76,7 @@ int main(int argc, const char * argv[]) {
     memory_array[2] = ATmega644p_memory;
     memory_array[3] = ATmega1284_memory;
     memory_array[4] = ATmega2560_memory;
+	memory_array[5] = ATmega4809_memory;
     //memory_array[5] = ATtiny3217_memory;
     //memory_array[6] = ATtiny1617_memory;
     //memory_array[7] = ATtiny817_memory;
@@ -170,6 +174,7 @@ void recommend(int size, int *arr){
     m["ATmega644p"] = arr[2];
     m["ATmega1284"] = arr[3];
     m["ATmega2560"] = arr[4];
+	m["ATmega4809"] = arr[4];
     //m["ATtiny3217"] = arr[5];
     //m["ATtiny1617"] = arr[6];
     //m["ATtiny817"] = arr[7];
