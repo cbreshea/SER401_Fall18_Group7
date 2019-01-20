@@ -1,22 +1,4 @@
 {
-	"ATmega168p" : { 
-		
-		"Program Memory Type" : "Flash",
-		"Program Memory Size(KB)" : 16,
-		"CPU Speed (MIPS/DMIPS)" : 20,
-		"SRAM Bytes" : 1024,
-		"Data EEPROM/HEF (bytes)" : 512,
-		"Digital Communication Peripherals" : {"UARTNum" : 1, "SPINum" : 2, "I2C" : 1},
-		"Capture/Compare/PWM Peripherals" : {"Input Capture Number" : 1, "CPPNum" : 1, "PWMNum" : 6},
-		"Timers" : {"8-bit" : 2, "16-bit" : 1},
-		"Number of Comparators" : 1,
-		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
-		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
-		"Pin Count" : 32,
-		"Low Power" : true
-
-    },
-
     "ATmega328p" : { 
 		
 		"Program Memory Type" : "Flash",
