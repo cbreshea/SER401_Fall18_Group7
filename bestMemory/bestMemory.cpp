@@ -18,6 +18,7 @@ std::ifstream::pos_type filesize(const char* file)
 
 int min(int *arr, int num);
 void recommend(int num, int *arr);
+int percentDifference(int num1, int num2);
 
 int main(int argc, const char * argv[]) {
     
@@ -93,6 +94,7 @@ int main(int argc, const char * argv[]) {
 }
 
 
+
 // find the smallest difference between sketch memory and available. This is to find the closest chip with the memory capacity 
 int min(int *arr, int num){
 
@@ -160,6 +162,16 @@ void recommend(int size, int *arr){
     }
 
     
+
+}
+
+int percentDifference(int num1, int num2){
+
+	int difference = num2-num1;
+	int quotient = difference/num2;
+	int percent = quotient*100;
+
+	return percent;
 
 }
 
