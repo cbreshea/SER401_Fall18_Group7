@@ -1,0 +1,7 @@
+Identifying pins that are being used for PWM
+Pulse width modulation is done in arduino code using the analogWrite() method.
+This method takes two input the first being the pin and the second being the value
+
+To figure out what pin is recieving the outputted value of the PWM look at the first value passsed in to analogWrite().
+
+PWM can also be identified by the OCR2A and OCR2B which are used to enable Fast PWM
