@@ -19,6 +19,7 @@ std::ifstream::pos_type filesize(const char* file)
 int min(int *arr, int num);
 void recommend(int num, int *arr);
 int percentDifference(int num1, int num2);
+bool checkDifference(int sketch_mem, int chip_mem);
 
 int main(int argc, const char * argv[]) {
     
@@ -172,6 +173,17 @@ int percentDifference(int num1, iny num2){
 	int final_quotient = difference/initial_quotient;
 	int percent = final_quotient*100;
 	return percent;
+}
+
+// check if the sketch memory is close to memory capacity through the percent difference 
+bool checkDifference(int sketch_mem, int chip_mem){
+    int diff = percentDifference(sketch_mem, chip_mem);
+
+    if(diff <= 10 && diff >= 10){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 
