@@ -165,14 +165,13 @@ void recommend(int size, int *arr){
 
 }
 
-int percentDifference(int num1, int num2){
-
-	int difference = num2-num1;
-	int quotient = difference/num2;
-	int percent = quotient*100;
-
+int percentDifference(int num1, iny num2){
+	int difference = num1-num2;
+	int sum = num1 + num2;
+	int initial_quotient = sum/2;
+	int final_quotient = difference/initial_quotient;
+	int percent = final_quotient*100;
 	return percent;
-
 }
 
 
