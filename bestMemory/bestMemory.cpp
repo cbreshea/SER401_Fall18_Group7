@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "json.hpp"
 #include <math.h>
+#include <string>
 using namespace std;
 
 
@@ -20,6 +21,9 @@ int min(int *arr, int num);
 void recommend(int num, int *arr);
 int percentDifference(int num1, int num2);
 bool checkDifference(int sketch_mem, int chip_mem);
+void findNextMem(int sketch_mem, int chip_mem);
+int getChosen(int size, int *arr);
+std::string returnName(int size, int *arr);
 
 int main(int argc, const char * argv[]) {
     
@@ -166,7 +170,79 @@ void recommend(int size, int *arr){
 
 }
 
-int percentDifference(int num1, iny num2){
+int getChosen(int size, int *arr){
+
+    // hash map to match microchip name (key) and its memory(value)
+    std::map<std::string, int> m;
+    m["Atmega168p"] = arr[0];
+    m["ATmega328p"] = arr[1];
+    m["ATmega644p"] = arr[2];
+    m["ATmega1284"] = arr[3];
+    m["ATmega2560"] = arr[4];
+    m["ATtiny3217"] = arr[5];
+    m["ATtiny1617"] = arr[6];
+    m["ATtiny817"] = arr[7];
+
+    std::cout << " "<< "\n";
+
+    std::string chip;
+
+    if(min(arr, size) == -1){
+        std::cout << "no chip meets requirements" << "\n";
+    }else{
+        for (auto const& x : m)
+        {
+            if(x.second == (size+min(arr, size))){
+
+                chip = x.first;
+                return x.second;
+            }
+   
+        }
+
+      
+    }
+
+    return 0;    
+
+}
+
+std::string returnName(int size, int *arr){
+    // hash map to match microchip name (key) and its memory(value)
+    std::map<std::string, int> m;
+    m["Atmega168p"] = arr[0];
+    m["ATmega328p"] = arr[1];
+    m["ATmega644p"] = arr[2];
+    m["ATmega1284"] = arr[3];
+    m["ATmega2560"] = arr[4];
+    m["ATtiny3217"] = arr[5];
+    m["ATtiny1617"] = arr[6];
+    m["ATtiny817"] = arr[7];
+
+    std::cout << " "<< "\n";
+
+    std::string chip = "null";
+
+    if(min(arr, size) == -1){
+        std::cout << "no chip meets requirements" << "\n";
+    }else{
+        for (auto const& x : m)
+        {
+            if(x.second == (size+min(arr, size))){
+
+                chip = x.first;
+                return chip;
+            }
+   
+        }
+
+      
+    }
+
+    return chip;    
+}
+
+int percentDifference(int num1, int num2){
 	int difference = num1-num2;
 	int sum = num1 + num2;
 	int initial_quotient = sum/2;
@@ -185,6 +261,17 @@ bool checkDifference(int sketch_mem, int chip_mem){
         return false;
     }
 }
+
+void findNextMem(int sketch_mem, int chip_mem){
+
+	bool diff = checkDifference(sketch_mem, chip_mem);
+	if(diff == true){
+		
+	}
+
+
+} 
+
 
 
 
