@@ -1,0 +1,11 @@
+Using I2C:
+	Most arduino boards include support for I2C as part of the hardware and have macro defined for using it. The most popular library for I2C is the Wire library. To use I2C the program will include this library and the first thing done with it is to call Wire.begin() which will initialize the library. To communicate Wire.beginTransmission() will be called then wire.write() and wire.endTransmission(). If the device is the reciever then wire.onreceive() will be called after beginTransmission.
+
+Detecting if I2C is required:
+	An easy way to detect if I2C is being used is to look for the wire library. This can be done by looking for Wire.h in the includes for the project or
+	by looking for Wire.begin() which is required by the wire library to initialize variables for the library. 
+	A more general way to detect this could also be to look for an assignment to SDA or SCL in the source code as many microcontrollers have these as 
+	macros if they support I2C as part of the included hardware.
+	If a user plans on using an I2C breakout board/shield then I am not entirely sure how we can detect this in their code. As their use of the board would
+	be dependent on the documentation for that board if we wanted to try to support this case we would probably just have to hope the user defines
+	something as SDA or SCL as they would not be using any predefined macros.
