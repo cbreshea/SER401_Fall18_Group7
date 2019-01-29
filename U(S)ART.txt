@@ -1,0 +1,13 @@
+All arduino boards that have serial support use digital pins 0(RX) and 1(TX) for serial communication. Some boards have multiple serial ports and so have several sets of pins that can be used as digital input output or for serial communication.
+
+An easy way to see if an Arduino project is using serial communication is to look for Serial.begin("baud rate"); This is to initialize the Serial library and set its baud rate for whatever number is given. 
+
+If the board has multiple Serial ports then they can be initialized using Serial.begin("baud rate") for port 0, then Serial1.begin("baud rate"), and so on for each serial port the board has.
+
+Identifying if the project requires Serial:
+	This can be done by just looking for Serial.begin in the source code as there is atleast port0 being used.
+
+Identifying if multiple ports are required:
+	This can be done by counting the number of times that a string like Serial.begin occurs in the source code and then recommend a chip with that number
+	of Serial ports available or if there are none available with the reuqired number of ports we could recommend using the SoftwareSerial library which
+	allows for using software to perform Serial communication rather than relying on built in serial hardware.
