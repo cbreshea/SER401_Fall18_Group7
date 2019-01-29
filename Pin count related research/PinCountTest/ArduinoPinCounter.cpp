@@ -4,13 +4,15 @@
 using namespace std;
 
 int main(){
-	string line;
-  ifstream myfile ("simple.ino");
+	string file;
+	cout << "Enter the file name + extension: \n";
+	cin >> file;
+  ifstream myfile (file.c_str());
   if (myfile.is_open())
   {
-    while ( getline (myfile,line) )
+    while ( getline (myfile,file) )
     {
-      cout << line << '\n';
+      cout << file << '\n';
     }
     myfile.close();
   }
