@@ -5,3 +5,27 @@ This method takes two input the first being the pin and the second being the val
 To figure out what pin is recieving the outputted value of the PWM look at the first value passsed in to analogWrite().
 
 PWM can also be identified by the OCR2A and OCR2B which are used to enable Fast PWM
+
+reference on analogWrite():
+https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/
+possible imporant to note found at this page:
+"The analogWrite function has nothing to do with the analog pins or the analogRead function."
+
+analogWrite is supported on pins DAC0 and DAC1 in addition to PWM pins. They act as true analog outputs.
+
+Example reference found at https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite
+
+int ledPin = 9;      // LED connected to digital pin 9
+int analogPin = 3;   // potentiometer connected to analog pin 3
+int val = 0;         // variable to store the read value
+
+void setup()
+{
+  pinMode(ledPin, OUTPUT);   // sets the pin as output
+}
+
+void loop()
+{
+  val = analogRead(analogPin);   // read the input pin
+  analogWrite(ledPin, val / 4);  // analogRead values go from 0 to 1023, analogWrite values from 0 to 255
+}
