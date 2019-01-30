@@ -1,0 +1,8 @@
+Using SPI:
+	If a project requires SPI it is likely using the arduino library SPI.h. If a project is using SPI it will require 4 digital pins.
+	These pins will be for MOSI(Master Out Slave In), MISO(Master In Slave Out), SCK(Serial Clock), and SS(Slave Select)
+	Alternatively the user can instead use the ISCP header for SPI communication and on certain boards like the Leonardo this will be required.
+	If this is the case then nothing needs to be accounted for as this header is included on every board as it is used to load programs onto the board.
+
+Detecting if SPI is required:
+	This can be done by searching for SPI.h or SPI.begin() in the source code of the project.
