@@ -22,10 +22,10 @@ int min(int *arr, int num);
 void recommend(int num, int *arr);
 int percentDifference(int num1, int num2);
 bool checkDifference(int sketch_mem, int chip_mem);
-void findNextMem(int sketch_mem, int chip_mem);
+void findNextMem(int *arr, int sketch_mem, int chip_mem);
 int getChosen(int size, int *arr);
 std::string returnName(int size, int *arr);
-void transfer(int *arr);
+void transfer(int *arr, int size);
 
 std::vector<int> v;
 
@@ -187,7 +187,7 @@ void recommend(int size, int *arr){
 }
 
 
-
+// get initially recommended memory value
 int getChosen(int size, int *arr){
 
     // hash map to match microchip name (key) and its memory(value)
@@ -280,15 +280,28 @@ bool checkDifference(int sketch_mem, int chip_mem){
     }
 }
 
-void findNextMem(int sketch_mem, int chip_mem){
+/*get rec chip mem
+pass it in this method
+check diff
+do a transfer to a vector
+pass vector in to new scale up method*/
+
+void findNextMem(int *arr, int sketch_mem, int chip_mem){
 
 	bool diff = checkDifference(sketch_mem, chip_mem);
 	if(diff == true){
-		
-	}
+        transfer(arr, chip_mem);
+		//TO DO
+        // function that finds next closes memory size
+	}else{
+        std::cout << "The microchip is sufficient";
+    }
 
 
 } 
+
+
+
 
 
 
