@@ -6,6 +6,7 @@
 #include "json.hpp"
 #include <math.h>
 #include <string>
+#include <vector>
 using namespace std;
 
 
@@ -24,6 +25,9 @@ bool checkDifference(int sketch_mem, int chip_mem);
 void findNextMem(int sketch_mem, int chip_mem);
 int getChosen(int size, int *arr);
 std::string returnName(int size, int *arr);
+void transfer(int *arr);
+
+std::vector<int> v;
 
 int main(int argc, const char * argv[]) {
     
@@ -93,11 +97,23 @@ int main(int argc, const char * argv[]) {
     std::cout << "The microchip is: ";
     recommend(sketch, memory_array);
 
+    
+
+    
+
     return 0;
 
 
 }
 
+//transfer previous array to a vector
+void transfer(int *arr, int size){
+     for(int i = 0; i < 8; i++){
+        if(arr[i] != getChosen(size, arr)){
+            v.push_back(arr[i]);
+        }
+     }
+}
 
 
 // find the smallest difference between sketch memory and available. This is to find the closest chip with the memory capacity 
@@ -169,6 +185,8 @@ void recommend(int size, int *arr){
     
 
 }
+
+
 
 int getChosen(int size, int *arr){
 
