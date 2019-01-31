@@ -1,6 +1,6 @@
-{
-	"ATmega168p" : { 
-		
+{ "MegaAVRs" : [
+	{ 
+		"Name" : "ATmega168p",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 16,
 		"CPU Speed (MIPS/DMIPS)" : 20,
@@ -17,8 +17,8 @@
 
     },
 
-    "ATmega328p" : { 
-		
+    { 
+		"Name" : "ATmega328p",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 32,
 		"CPU Speed (MIPS/DMIPS)" : 20,
@@ -35,8 +35,8 @@
 
     },
 
-    "ATmega644p" : { 
-		
+    { 
+		"Name" : "ATmega644p",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 64,
 		"CPU Speed (MIPS/DMIPS)" : 20,
@@ -53,8 +53,8 @@
 
     },
 
-    "ATmega1284" : { 
-		
+    { 
+		"Name" : "ATmega1284",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 128,
 		"CPU Speed (MIPS/DMIPS)" : 20,
@@ -70,8 +70,8 @@
 	
     },
 
-    "ATmega2560" : { 
-		
+    { 
+		"Name" : "ATmega2560",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 256,
 		"CPU Speed (MIPS/DMIPS)" : 16,
@@ -87,5 +87,5 @@
 	
     }
 
-}
+]}
 
