@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "json.hpp"
 #include <math.h>
+#include <limits>
 using namespace std;
 
 // returns size
@@ -57,6 +58,45 @@ int GetIntFromString(string str){
       }
       temp = "";
    }
+}
+
+/*
+method to find memory size from json files just above memory requirement given. memReq is expected to be the size of the project expected to
+be put on the microcontroller and is expected to represent the number of bytes. The memory size returned is an int representing the number of kilobytes
+of memory is recommended to store this program size.
+*/
+int findMemorySize(int memReq){
+   //open json files
+   using json = nlohmann::json;
+    std::ifstream mega("MegaAVR.json");
+    std::ifstream tiny("TinyAVR.json");
+   //read objects from json files
+    json megaAvr = json::parse(mega);
+    json tinyAvr = json::parse(tiny);
+    
+    int sizeRec = std::numeric_limits<int>::max();//set initial size recommendation to a high number so the first size checked will always be picked
+    int temp = 0;//variable to hold memory from microcontroller
+   
+   //search each object for microcontroller with memory size just above memory requirement
+    for(int i = 0; i < megaAvr["MegaAVRs"].size(); ++i){
+      temp = megaAvr["MegaAVRs"][i]["Program Memory Size(KB)"];//this assignment is needed to convert to c++ int
+      if( memReq < (temp * 1000) ){//if program will fit in memory
+         if( temp < sizeRec){//if memory size is smaller than previously selected memory size
+            sizeRec = temp;//recommend memory size
+         }
+      }
+    }
+   
+    for(int i = 0; i < tinyAvr["TinyAVRs"].size(); ++i){
+      temp = tinyAvr["TinyAVRs"][i]["Program Memory Size(KB)"];//this assignment is needed to convert to c++ int
+      if( memReq < (temp * 1000) ){//if program will fit in memory
+         if( temp < sizeRec){//if memory size is smaller than previously selected memory size
+            sizeRec = temp;//recommend memory size
+         }
+      }
+    }
+    
+    return sizeRec;
 }
 
 int main(int argc, const char ** argv) {

@@ -1,6 +1,24 @@
-{
-    "ATmega328p" : { 
-		
+{ "MegaAVRs" : [
+	{ 
+		"Name" : "ATmega168p",
+		"Program Memory Type" : "Flash",
+		"Program Memory Size(KB)" : 16,
+		"CPU Speed (MIPS/DMIPS)" : 20,
+		"SRAM Bytes" : 1024,
+		"Data EEPROM/HEF (bytes)" : 512,
+		"Digital Communication Peripherals" : {"UARTNum" : 1, "SPINum" : 2, "I2C" : 1},
+		"Capture/Compare/PWM Peripherals" : {"Input Capture Number" : 1, "CPPNum" : 1, "PWMNum" : 6},
+		"Timers" : {"8-bit" : 2, "16-bit" : 1},
+		"Number of Comparators" : 1,
+		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
+		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
+		"Pin Count" : 32,
+		"Low Power" : true
+
+    },
+
+    { 
+		"Name" : "ATmega328p",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 32,
 		"CPU Speed (MIPS/DMIPS)" : 20,
@@ -17,8 +35,8 @@
 
     },
 
-    "ATmega644p" : { 
-		
+    { 
+		"Name" : "ATmega644p",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 64,
 		"CPU Speed (MIPS/DMIPS)" : 20,
@@ -35,8 +53,8 @@
 
     },
 
-    "ATmega1284" : { 
-		
+    { 
+		"Name" : "ATmega1284",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 128,
 		"CPU Speed (MIPS/DMIPS)" : 20,
@@ -51,27 +69,9 @@
 		"Pin Count" : 44
 	
     },
-	
-	"ATmega4809" : { 
-		
-		"Program Memory Type" : "Flash",
-		"Program Memory Size(KB)" : 48,
-		"CPU Speed (MIPS/DMIPS)" : 20,
-		"SRAM Bytes" : 6144,
-		"Data EEPROM/HEF (bytes)" : 256,
-		"Digital Communication Peripherals" : {"UARTNum" : 4, "SPINum" : 1, "I2C" : 1},
-		"Capture/Compare/PWM Peripherals" : {"Input Capture Number" : 16, "CPPNum" : 0, "PWMNum" : 11},
-		"Timers" : {"8-bit" : 0, "16-bit" : 5},
-		"Number of Comparators" : 1,
-		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 125},
-		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
-		"Pin Count" : 48,
-		"Low Power" : true
 
-    },
-
-    "ATmega2560" : { 
-		
+    { 
+		"Name" : "ATmega2560",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 256,
 		"CPU Speed (MIPS/DMIPS)" : 16,
@@ -87,5 +87,5 @@
 	
     }
 
-}
+]}
 

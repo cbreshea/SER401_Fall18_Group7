@@ -1,6 +1,6 @@
-{
-	"ATtiny3217" : { 
-		
+{ "TinyAVRs" : [
+	 { 
+		"Name" : "ATtiny3217",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 32,
 		"CPU Speed (MIPS/DMIPS)" : 20,
@@ -17,8 +17,8 @@
 		
     },
 
-   "ATtiny1617" : { 
-		
+    { 
+		"Name" : "ATtiny1617",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 16,
 		"CPU Speed (MIPS/DMIPS)" : 20,
@@ -35,8 +35,8 @@
 		
     },
 
-    "ATtiny817" : { 
-		
+    { 
+		"Name" : "ATtiny817",
 		"Program Memory Type" : "Flash",
 		"Program Memory Size(KB)" : 8,
 		"CPU Speed (MIPS/DMIPS)" : 20,
@@ -52,5 +52,5 @@
 		
     }
 
-}
+]}
 
