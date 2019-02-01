@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 	string file;
-	string keyword = "dog";
+	string keyword = "ledPin";
 	string word;
 	int count = 0;
 	//cout << keyword;
@@ -18,6 +18,7 @@ int main(){
 			count++;
 		}
 	}
+	cout << "The amount of pins in this project is: ";
 	cout << count;
   /*
   if (myfile.is_open())
