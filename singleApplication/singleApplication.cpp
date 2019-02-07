@@ -16,6 +16,13 @@
 #include <string>
 using namespace std;
 
+/*
+IMPORTANT NOTE:
+There seems to be a compatability issue between the -std=c++11 compiler option and the system commands used in GetStdoutFromCommand. 
+This option is needed in order to allow use of json.hpp to be used in this program. In order to maintain compatability instead use
+the compiler option -std=gnu++11 for the program to successfully compile.
+*/
+
 // returns size
 /*
 std::ifstream::pos_type filesize(const char* file)
@@ -74,7 +81,7 @@ string recommendMicroController(int memReq){
     json megaAvr = json::parse(mega);
     json tinyAvr = json::parse(tiny);
     
-    int memReq = 10000;
+    memReq = 10000;
     int sizeRec = std::numeric_limits<int>::max();//set initial size recommendation to a high number so the first size checked will always be picked
     int temp = 0;//variable to hold memory from microcontroller
     json microcontroller;
