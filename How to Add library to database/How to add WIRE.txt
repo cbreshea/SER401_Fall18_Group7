@@ -1,0 +1,4 @@
+All of the ATmega family of chips only have 1 set of SPI pins
+That means that if the library is used the only pins that will be used are the SDA and SCL pins
+If the Wire library is imported it is safe to assume that these two pins will be used. No keywords need to be searched for in
+the code to identify this library.
