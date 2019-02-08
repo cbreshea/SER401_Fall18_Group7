@@ -4,35 +4,24 @@
 using namespace std;
 
 int main(){
+    //String for the file's words
 	string file;
+    //Keyword we are going to use to compare
 	string keyword = "ledPin";
+    //Sring of the current file's word
 	string word;
+    //int for the number of times the keyword was found
 	int count = 0;
-	//cout << keyword;
+    
 	cout << "Enter the file name + extension: \n";
+    //Read in the file and start comparing word for word
 	cin >> file;
   ifstream myfile (file.c_str());
   while(myfile >> word){
-		//cout << word << " ";
 		if(word == keyword){
 			count++;
 		}
 	}
 	cout << "The amount of pins in this project is: ";
 	cout << count;
-  /*
-  if (myfile.is_open())
-  {
-    while ( getline (myfile,file) )
-    {
-      cout << file << '\n';
-    }
-    myfile.close();
-  }
-
-  else cout << "Unable to open file"; 
-
-  return 0;
-	*/
-	
 }
