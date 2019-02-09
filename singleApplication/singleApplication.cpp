@@ -16,6 +16,8 @@
 #include <string>
 using namespace std;
 
+#define MEMORY_PERCENT_BUFFER 10
+
 /*
 IMPORTANT NOTE:
 There seems to be a compatability issue between the -std=c++11 compiler option and the system commands used in GetStdoutFromCommand. 
@@ -68,20 +70,30 @@ int GetIntFromString(string str){
    }
 }
 
+//function to find percent difference between two integers
+int percentDifference(int num1, int num2){
+	int difference = abs(num1-num2);
+	int sum = num1 + num2;
+	int initial_quotient = sum/2;
+	int final_quotient = difference/initial_quotient;
+	int percent = final_quotient*100;
+	return percent;
+}
+
 /*
 method to recommend a microcontroller from json files that the program will fit on. memReq is expected to be the size of the project expected to
 be put on the microcontroller and is expected to represent the number of bytes.
 */
 string recommendMicroController(int memReq){
+   string mcName = "None";
    //open json files
    using json = nlohmann::json;
     std::ifstream mega("MegaAVR.json");
     std::ifstream tiny("TinyAVR.json");
-   //read objects from json files
+   //read json objects from json files
     json megaAvr = json::parse(mega);
     json tinyAvr = json::parse(tiny);
     
-    memReq = 10000;
     int sizeRec = std::numeric_limits<int>::max();//set initial size recommendation to a high number so the first size checked will always be picked
     int temp = 0;//variable to hold memory from microcontroller
     json microcontroller;
@@ -91,7 +103,7 @@ string recommendMicroController(int memReq){
       if( memReq < (temp * 1000) ){//if program will fit in memory
          if( temp < sizeRec){//if memory size is smaller than previously selected memory size
             sizeRec = temp;//recommend memory size
-            microcontroller = megaAvr["MegaAVRs"][i];//recommend microcontroller
+            mcName = megaAvr["MegaAVRs"][i]["Name"];//recommend microcontroller
          }
       }
     }
@@ -101,12 +113,18 @@ string recommendMicroController(int memReq){
       if( memReq < (temp * 1000) ){//if program will fit in memory
          if( temp < sizeRec){//if memory size is smaller than previously selected memory size
             sizeRec = temp;//recommend memory size
-            microcontroller = tinyAvr["TinyAVRs"][i];//recommend microcontroller
+            mcName = tinyAvr["TinyAVRs"][i]["Name"];//recommend microcontroller
          }
       }
     }
+    sizeRec = sizeRec * 1000;//convert from KB to bytes
+    //check if program size is close to program memory for microcontroller, if it is then bump it up to next recommendation
+    //by using the previous recommending microcontroller program memory as a requirement
+    if( percentDifference(sizeRec, memReq) <= MEMORY_PERCENT_BUFFER ){
+      mcName = recommendMicroController(sizeRec);
+    }
     
-    return microcontroller["Name"];
+    return mcName;
 }
 
 int main(int argc, const char ** argv) {
@@ -118,9 +136,11 @@ int main(int argc, const char ** argv) {
     //compile arduino sketch using the arduino cli, capturing stdout in string output
     string output = GetStdoutFromCommand( ("cd ./example && arduinocli compile -b arduino:avr:uno " + str + " -o main").c_str() );
     int size = GetIntFromString(output);//get file size from arduinocli output
-    //output file size
+    string microcontroller = recommendMicroController(size);//get recommended microcontroller for program size
+    //output program measured, program size, and name of recommended microcontroller
     cout << "Program: " << str << endl;
-    cout << "Size: " << size << " bytes";
+    cout << "Size: " << size << " bytes" << endl;
+    cout << "Recommend: " << microcontroller << endl;
     }
     else{
       cout << "Please enter a filename.";
