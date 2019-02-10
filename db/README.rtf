@@ -5,23 +5,27 @@
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 1) Download MySQL workbench\
-2) Open the workbench and go to \
+\f0\fs24 \cf0 1) Download MySQL workbench (https://dev.mysql.com/downloads/workbench/)\
+2) Open MySQL workbench\
 3) Double click your local instance root and sign in\
-4) In the left side select \'91Administration\'92\
-5) Under \'91Management\'92 select \'91data import/restore\
-6) In the section \'91import from project dump folder\'92 locate the db folder that is inside the capstone project and then select the dumps folder\
-7) click on \'91load folder contents\'92\
-8) Select the database \'91arduinolibraries\'92 and then click \'91start import;\
-9) Now go to \'91schemas\'92 (next to Administration tab) and open the database\
-10) Make your changes\
-11) Once you are done click on the \'91administration\'92 tab and under management click \'91Data Export\'92\
-12) Select the arduiniolibraries database and include all tables and other information\
-13) Under the two sub-sections make sure the option is \'91Dump structure and Data\'92\
-14) Make sure to \'91export to dump project folder\'92 and locate the capstone/db/dump folder\
-15) start export\
-16) done\
+4) In the left side select \'91Schemas\'92\
+5) Create a new schema called \'91arduinolibraries\'92 (you can right click in that open area)\
+6) Click on the administration tab  and under \'91Management\'92 select \'91data import/restore\'92\
+7) In the section \'91import from project dump folder\'92 locate the db folder that is inside the capstone project and then select the dump folder\
+8) click on \'91load folder contents\'92\
+9) Select the database \'91arduinolibraries\'92 and the tables that pop up on the right and click \'91start import\
+10) Now go to \'91schemas\'92 right click in the open area and refresh all, now open the database\
+11) Now open the query tab and make your changes\
+12) Once you are done click on the \'91administration\'92 tab and under management click \'91Data Export\'92\
+13) Select the arduiniolibraries database and include all tables\
+14) Under the two sub-sections make sure the option is \'91Dump structure and Data\'92\
+15) Make sure to \'91export to dump project folder\'92 and locate the capstone/db/dump folder\
+16) start export\
+17) done\
 \
 \
-NOTE: You might create a duplicate dump folder when exporting, just delete the old dump folder so the next person knows which db to import\
-}
+NOTE: You will only have to create \'91arduinolibraries\'92 schema once so that the workbench recognizes it.\
+\
+NOTE: You might create a duplicate sql file inside the dump folder just make sure to delete the old sql so the next person doesn\'92t have to guess which version is the latest\
+\
+NOTE: MAKE SURE THE MYSQL WORKBENCH IS FULL SCREEN SOME BUTTONS ARE CUTOFF}
