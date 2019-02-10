@@ -13,10 +13,10 @@ int main(int argc, const char ** argv) {
     
     
     const char *filename = "hex.txt";
-    ifstream infile(filename, fstream::in);
+    ifstream read_file(filename, fstream::in);
 
     unsigned int val;
-    infile >> hex >> val; // read hex value
+    read_file >> hex >> val; // read hex value
     cout << hex << val; // display hex value
 
     return 0;
