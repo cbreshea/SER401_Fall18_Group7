@@ -12,9 +12,16 @@ void convertToString(std::string hexVal);
 void convertToBinary(std::string hexVal);
 
 int main(int argc, const char ** argv) {
-    
-    
-   	std::string hexVal = "48656c6c6f";
+
+
+    const char *filename = "hello.txt";
+    ifstream read_file(filename, fstream::in);
+
+    std::string val;
+    read_file >> convertToString(filename) >> val; // read hex value
+    cout << val; // display hex value
+	
+    std::string hexVal = "48656c6c6f";
 	convertToString(hexVal);
 	return 0;
 }
