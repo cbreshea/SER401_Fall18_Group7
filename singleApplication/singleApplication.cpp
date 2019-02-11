@@ -72,10 +72,10 @@ int GetIntFromString(string str){
 
 //function to find percent difference between two integers
 int percentDifference(int num1, int num2){
-	int difference = abs(num1-num2);
-	int sum = num1 + num2;
-	int initial_quotient = sum/2;
-	int final_quotient = difference/initial_quotient;
+	double difference = abs(num1-num2);
+	double sum = num1 + num2;
+	double initial_quotient = sum/2;
+	double final_quotient = difference/initial_quotient;
 	int percent = final_quotient*100;
 	return percent;
 }
@@ -141,6 +141,7 @@ int main(int argc, const char ** argv) {
     cout << "Program: " << str << endl;
     cout << "Size: " << size << " bytes" << endl;
     cout << "Recommend: " << microcontroller << endl;
+    cout << "percent difference " << percentDifference(10,20);
     }
     else{
       cout << "Please enter a filename.";
