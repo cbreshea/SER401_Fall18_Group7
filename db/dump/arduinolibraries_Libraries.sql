@@ -16,24 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user`
+-- Table structure for table `Libraries`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `Libraries`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `user` (
-  `username` varchar(16) NOT NULL
+CREATE TABLE `Libraries` (
+  `LibraryID` int(11) DEFAULT NULL,
+  `LibraryName` varchar(255) DEFAULT NULL,
+  `AnalogPins` int(11) DEFAULT NULL,
+  `DigitalPins` int(11) DEFAULT NULL,
+  `preSetPins` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `Libraries`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `Libraries` WRITE;
+/*!40000 ALTER TABLE `Libraries` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Libraries` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -45,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-09 22:46:21
+-- Dump completed on 2019-02-11 18:58:12
