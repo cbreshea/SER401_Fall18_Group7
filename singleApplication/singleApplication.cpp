@@ -70,11 +70,11 @@ int GetIntFromString(string str){
    }
 }
 
-//function to find percent difference between two integers
-int percentDifference(int num1, int num2){
-	double difference = abs(num1-num2);
-	double sum = num1 + num2;
-	double initial_quotient = sum/2;
+//function to find percent change between two integers
+// formula: ( (num2 - num1)/abs(num1) ) * 100
+int percentChange(int num1, int num2){
+	double difference = abs(num2-num1);
+	double initial_quotient = abs(num1);
 	double final_quotient = difference/initial_quotient;
 	int percent = final_quotient*100;
 	return percent;
@@ -120,7 +120,7 @@ string recommendMicroController(int memReq){
     sizeRec = sizeRec * 1000;//convert from KB to bytes
     //check if program size is close to program memory for microcontroller, if it is then bump it up to next recommendation
     //by using the previous recommending microcontroller program memory as a requirement
-    if( percentDifference(sizeRec, memReq) <= MEMORY_PERCENT_BUFFER ){
+    if( percentChange(sizeRec, memReq) <= MEMORY_PERCENT_BUFFER ){
       mcName = recommendMicroController(sizeRec);
     }
     
@@ -141,7 +141,6 @@ int main(int argc, const char ** argv) {
     cout << "Program: " << str << endl;
     cout << "Size: " << size << " bytes" << endl;
     cout << "Recommend: " << microcontroller << endl;
-    cout << "percent difference " << percentDifference(10,20);
     }
     else{
       cout << "Please enter a filename.";
