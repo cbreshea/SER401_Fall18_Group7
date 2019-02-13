@@ -13,5 +13,5 @@ while (file>>token)
     if (word == token)
     wcount++;
 
-cout << wcount << endl;
+cout << "The number of pins that this program uses is" << wcount << endl;
 }
