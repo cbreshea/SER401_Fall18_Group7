@@ -6,7 +6,7 @@ using namespace std;
 int main(){
 	
 	
-	string keyword = "dog";
+	/*string keyword = "dog";
 	string word;
 	//cout << keyword;
 	
@@ -19,7 +19,23 @@ int main(){
 			count++;
 		}
 	}
-	cout << count;
+	cout << count;*/
+
+	ifstream fin("test.txt");
+	int count = 0;
+	std::string keyword = "dog";
+	std::string found;
+
+	while(fin){
+		fin >> found;
+		if(found == keyword){
+			count++;
+		}
+	}
+
+	cout << "Occurence="<<count<<"\n";
+	fin.close();
+
 	
 	return 0;
 
