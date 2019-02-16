@@ -16,32 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Libraries`
+-- Table structure for table `Wire`
 --
 
-DROP TABLE IF EXISTS `Libraries`;
+DROP TABLE IF EXISTS `Wire`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Libraries` (
-  `LibraryID` int(11) DEFAULT NULL,
-  `LibraryName` varchar(255) DEFAULT NULL,
-  `AnalogPins` int(11) DEFAULT NULL,
-  `DigitalPins` int(11) DEFAULT NULL,
-  `preSetPins` int(11) DEFAULT NULL
+CREATE TABLE `Wire` (
+  `SDA` int(11) DEFAULT NULL,
+  `SCL` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-INSERT INTO 'Libraries'
-VALUES (1, 'SPI', 0, 4, 0);
-
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Libraries`
+-- Dumping data for table `Wire`
 --
 
-LOCK TABLES `Libraries` WRITE;
-/*!40000 ALTER TABLE `Libraries` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Libraries` ENABLE KEYS */;
+LOCK TABLES `Wire` WRITE;
+/*!40000 ALTER TABLE `Wire` DISABLE KEYS */;
+INSERT INTO `Wire` VALUES (1376,'Digital RGB LED Strip - White 30 LED - WHITE',0,1,1);
+/*!40000 ALTER TABLE `Wire` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-11 18:58:12
+-- Dump completed on 2019-02-12 18:51:18
