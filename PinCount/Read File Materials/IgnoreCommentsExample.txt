@@ -1,0 +1,21 @@
+This file is to show how to disregard comments in a file
+This will help us have a better understanding of what we are supposed to do
+When it comes to comments.
+
+This file is meant to push the groups knowledge of reading files
+
+
+
+while (std::getline(input_file, line))
+{
+    if (line[0] != "#" )
+    {
+        std::istringstream iss(line);
+        float num; // The number in the line
+
+        //while the iss is a number 
+        while ((iss >> num))
+        {
+            //look at the number
+        }
+    }
