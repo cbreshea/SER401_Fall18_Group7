@@ -19,3 +19,35 @@ while (std::getline(input_file, line))
             //look at the number
         }
     }
+
+
+// Here is another instance of ignoring comments.
+// Again the following is used to push the groups knowledge of skipping commnets forward.
+
+#include <iostream>
+#include <string>
+#include <sstream>
+
+std::istream& get_line_strip_comments( std::istream& stm, std::string& str )
+{
+    if( std::getline( stm, str ) )
+    {
+        auto pos = str.find( "//" ) ;
+        if( pos == 0 ) return get_line_strip_comments( stm, str ) ;
+        else if( pos != std::string::npos ) str.erase(pos) ;
+    }
+    return stm ;
+}
+
+
+int main()
+{
+    std::istringstream stm( R"(
+this is a line with no comments
+// this is a comment line
+some text // and then a comment
+more text / / this is not a comment // but this is\n)" ) ;
+
+    std::string str ;
+    while( get_line_strip_comments( stm, str ) ) std::cout << str << '\n' ;
+}
