@@ -32,6 +32,11 @@ CREATE TABLE `Libraries` (
 
 INSERT INTO 'Libraries'
 VALUES (1, 'SPI', 0, 4, 0);
+--Liquidcrystal can either take 4 or 8 digital pins based on the constructor called in code
+INSERT INTO 'Libraries'
+VALUES (2, 'LiquidCrystal', 0, 4, 0);
+INSERT INTO 'Libraries'
+VALUES (3, 'LiquidCrystal', 0, 8, 0);
 
 /*!40101 SET character_set_client = @saved_cs_client */;
 
