@@ -51,3 +51,24 @@ more text / / this is not a comment // but this is\n)" ) ;
     std::string str ;
     while( get_line_strip_comments( stm, str ) ) std::cout << str << '\n' ;
 }
+
+///////////////
+
+UPDATE: 2/16/19
+
+I found this code on https://stackoverflow.com/questions/28379413/skipping-comment-lines-starting-with-in-c
+
+This is meant to help the groups knoweledge going forward. I Do Not take credit for this.
+
+while(getline(infile, filename)) {
+
+    filename = ltrim(filename);  // remove leading whitespace
+    filename = rtrim(filename);  // remove trailing whitespace
+
+    if(filename.empty() || (filename.find("//") == 0)) {
+        continue;
+    }
+
+    // increment the line number
+    ++line;
+}
