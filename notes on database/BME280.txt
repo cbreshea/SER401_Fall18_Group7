@@ -1,0 +1,10 @@
+About the sensor
+The BME 280 is an environmental sensor that giev information pertaining to relative humidity, pressure, and temperature.
+Uses: fitness monitoring, home automation, IoT, GPS enhancement, vertical velocity indication (rise/sink)
+designed for mobile phones, GPS modules, or watches (wearables)
+
+Technical data:
+uses I2C and SPI
+
+Supply voltage VDDIO: 1.2-3.6 V
+Supply voltage VDD: 1.71-3.6V
