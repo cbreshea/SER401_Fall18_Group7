@@ -16,15 +16,15 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Neopixel`
+-- Table structure for table `Libraries`
 --
 
-DROP TABLE IF EXISTS `Neopixel`;
+DROP TABLE IF EXISTS `Libraries`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Neopixel` (
-  `productID` int(11) DEFAULT NULL,
-  `stripName` varchar(255) DEFAULT NULL,
+CREATE TABLE `Libraries` (
+  `LibraryID` int(11) DEFAULT NULL,
+  `LibraryName` varchar(255) DEFAULT NULL,
   `AnalogPins` int(11) DEFAULT NULL,
   `DigitalPins` int(11) DEFAULT NULL,
   `preSetPins` int(11) DEFAULT NULL
@@ -32,13 +32,12 @@ CREATE TABLE `Neopixel` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Neopixel`
+-- Dumping data for table `Libraries`
 --
 
-LOCK TABLES `Neopixel` WRITE;
-/*!40000 ALTER TABLE `Neopixel` DISABLE KEYS */;
-INSERT INTO `Neopixel` VALUES (1376,'Digital RGB LED Strip - White 30 LED - WHITE',0,1,1);
-/*!40000 ALTER TABLE `Neopixel` ENABLE KEYS */;
+LOCK TABLES `Libraries` WRITE;
+/*!40000 ALTER TABLE `Libraries` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Libraries` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-12 18:51:18
+-- Dump completed on 2019-02-20 20:44:33
