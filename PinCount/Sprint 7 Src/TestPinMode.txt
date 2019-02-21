@@ -1,0 +1,16 @@
+This is a test text file to find the number of pins. 
+Here we are going to ignore the contents of a comment
+so that we don't count that instance of the keyword.
+
+/*
+We are talking about PIN_MODE
+PIN_MODE should not be counted 
+Here so the only PIN_MODE that 
+should be counted are the two are below
+*/
+
+PIN_MODE = 11
+
+PIN_MODE = 13
+
+// End of the file
