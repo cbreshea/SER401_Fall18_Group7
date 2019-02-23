@@ -1,0 +1,18 @@
+      #define PIN 6
+ 
+// Parameter 1 = number of pixels in strip
+// Parameter 2 = pin number (most are valid)
+// Parameter 3 = pixel type flags, add together as needed:
+//   NEO_KHZ800  800 KHz bitstream (most NeoPixel products w/WS2812 LEDs)
+//   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)
+//   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
+//   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
+
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
+
+
+1. The number of sequential NeoPixels in the strip. In the example this is set to 60, equal to 1 meter of medium-density strip. Change this to match the actual number you’re using.
+
+2. The pin number to which the NeoPixel strip (or other device) is connected. Normally this would be a number, but we previously declared the symbol PIN to refer to it by name here.
+
+3. A value indicating the type of NeoPixels that are connected. In most cases you can leave this off and pass just two arguments; the example code is just being extra descriptive. If you have a supply of classic “V1” Flora pixels, those require NEO_KHZ400 + NEO_RGB to be passed here.
