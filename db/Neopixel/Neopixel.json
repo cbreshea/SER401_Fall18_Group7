@@ -49,6 +49,57 @@
             {"productId":1138, "analogPins":0},
             {"digitalPins":2, "pins":2},
             {"length":5}
+        ],
+        //Black LED
+        "Adafruit NeoPixel Digital RGB LED Strip - Black 30 LED - BLACK": [
+            {"productId":1460, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":1}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - Black 30 LED - BLACK": [
+            {"productId":1460, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":2}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - Black 30 LED - BLACK": [
+            {"productId":1460, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":3}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - Black 30 LED - BLACK": [
+            {"productId":1460, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":4}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - Black 30 LED - BLACK": [
+            {"productId":1460, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":5}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - Black 60 LED - BLACK": [
+            {"productId":1461, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":1}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - Black 60 LED - BLACK": [
+            {"productId":1461, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":2}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - Black 60 LED - BLACK": [
+            {"productId":1461, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":3}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - Black 60 LED - BLACK": [
+            {"productId":1461, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":4}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - Black 60 LED - BLACK": [
+            {"productId":1461, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":5}
         ]
         
     }
