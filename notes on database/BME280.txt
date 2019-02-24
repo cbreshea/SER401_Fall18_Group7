@@ -4,7 +4,18 @@ Uses: fitness monitoring, home automation, IoT, GPS enhancement, vertical veloci
 designed for mobile phones, GPS modules, or watches (wearables)
 
 Technical data:
-uses I2C and SPI
+uses I2C or SPI
 
 Supply voltage VDDIO: 1.2-3.6 V
 Supply voltage VDD: 1.71-3.6V
+
+Popular page for it found:
+https://github.com/sparkfun/SparkFun_BME280_Arduino_Library/
+uses the library
+"SparkFunBME280.h" found on that github repo
+
+They can be used with I2C and SPI simultaniously.
+
+As requested by sponsor our project should be tested with a BME280 project.
+Use one found here:
+https://learn.sparkfun.com/tutorials/sparkfun-bme280-breakout-hookup-guide#i
