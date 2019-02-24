@@ -1,0 +1,55 @@
+{
+    "Neopixel": {
+        "Adafruit NeoPixel Digital RGB LED Strip - White 30 LED - WHITE": [
+            {"productId":1376, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":1}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - White 30 LED - WHITE": [
+            {"productId":1376, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":2}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - White 30 LED - WHITE": [
+            {"productId":1376, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":3}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - White 30 LED - WHITE": [
+            {"productId":1376, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":4}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - White 30 LED - WHITE": [
+            {"productId":1376, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":5}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED - WHITE": [
+            {"productId":1138, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":1}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED - WHITE": [
+            {"productId":1138, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":2}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED - WHITE": [
+            {"productId":1138, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":3}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED - WHITE": [
+            {"productId":1138, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":4}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED - WHITE": [
+            {"productId":1138, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":5}
+        ]
+        
+    }
+}
