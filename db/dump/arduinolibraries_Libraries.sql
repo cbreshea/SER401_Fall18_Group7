@@ -43,6 +43,8 @@ INSERT INTO 'Libraries'
 VALUES (4, 'Stepper', 0, 2, 0);
 INSERT INTO 'Libraries'
 VALUES (5, 'Stepper', 0, 4, 0);
+INSERT INTO 'Libraries'
+VALUES (6, 'SD', 0, 5, 0)
 
 /*!40101 SET character_set_client = @saved_cs_client */;
 
