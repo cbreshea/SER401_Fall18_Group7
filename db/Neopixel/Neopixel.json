@@ -100,7 +100,19 @@
             {"productId":1461, "analogPins":0},
             {"digitalPins":2, "pins":2},
             {"length":5}
+        ],
+        
+        "Adafruit NeoPixel Digital RGB LED Strip 144 LED - 1m White - WHITE": [
+            {"productId":1507, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":1}
+        ],
+        "Adafruit NeoPixel Digital RGB LED Strip 144 LED - 1m Black - BLACK": [
+            {"productId":1506, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":2}
         ]
+        
         
     }
 }
