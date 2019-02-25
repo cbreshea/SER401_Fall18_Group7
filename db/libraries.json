@@ -1,0 +1,39 @@
+{
+	"Libraries" : [
+		{
+			"name" : "SPI",
+			"AnalogPins" : 0,
+			"DigitalPins" : 4
+		},
+		{
+			"name" : "LiquidCrystal",
+			"AnalogPins" : 0,
+			"DigitalPins" : 4
+		},
+		{
+			"name" : "LiquidCrystal",
+			"AnalogPins" : 0,
+			"DigitalPins" : 8
+		},
+		{
+			"name" : "Ethernet",
+			"AnalogPins" : 0,
+			"DigitalPins" : 5
+		},
+		{
+			"name" : "Stepper",
+			"AnalogPins" : 0,
+			"DigitalPins" : 2
+		},
+		{
+			"name" : "Stepper",
+			"AnalogPins" : 0,
+			"DigitalPins" : 4
+		},
+		{
+			"name" : "SD",
+			"AnalogPins" : 0,
+			"DigitalPins" : 5
+		}
+	]
+}
