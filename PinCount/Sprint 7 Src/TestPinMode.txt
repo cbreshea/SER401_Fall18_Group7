@@ -3,14 +3,14 @@ Here we are going to ignore the contents of a comment
 so that we don't count that instance of the keyword.
 
 /*
-We are talking about PIN_MODE
-PIN_MODE should not be counted 
-Here so the only PIN_MODE that 
+We are talking about pinMode
+pinMode should not be counted 
+Here so the only pinMode that 
 should be counted are the two are below
 */
 
-PIN_MODE = 11
+pinMode = (11,HIGH)
 
-PIN_MODE = 13
+pinMode = (13,HIGH)
 
 // End of the file
