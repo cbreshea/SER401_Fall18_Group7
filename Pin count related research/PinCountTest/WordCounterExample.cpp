@@ -13,8 +13,34 @@ int main(){
 	int count = 0;
 	fstream file("test.txt");
 	
+	string = "";
+
+	foreach(string word in file)
+    {
+    char[] character = word.ToCharArray();
+	    foreach(char i in character)
+	    {
+	        if (i == '/' || i == '')
+	        {
+	            break;
+	        }
+	        else 
+	        {
+	        	string = "";
+	        }
+	    }
+	}   
+
 	while(file >> word){
 		//cout << word << " ";
+		if (word == '/'){
+			continue;
+		}
+
+		if(word.find("/")){
+			continue;
+		}
+
 		if(word == keyword){
 			count++;
 		}
