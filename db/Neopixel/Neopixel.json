@@ -1,113 +1,113 @@
 {
     "Neopixel": {
-        "Adafruit NeoPixel Digital RGB LED Strip - White 30 LED - WHITE": [
+        "White 30 LED 1m": [
             {"productId":1376, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":1}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - White 30 LED - WHITE": [
+        "White 30 LED 2m": [
             {"productId":1376, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":2}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - White 30 LED - WHITE": [
+        "White 30 LED 3m": [
             {"productId":1376, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":3}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - White 30 LED - WHITE": [
+        "White 30 LED 4m": [
             {"productId":1376, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":4}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - White 30 LED - WHITE": [
+        "White 30 LED 5m": [
             {"productId":1376, "analogPins":0},
             {"digitalPins":2, "pins":2},
             {"length":5}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED - WHITE": [
+        "White 60 LED 1m": [
             {"productId":1138, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":1}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED - WHITE": [
+        "White 60 LED 2m": [
             {"productId":1138, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":2}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED - WHITE": [
+        "White 60 LED 3m": [
             {"productId":1138, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":3}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED - WHITE": [
+        "White 60 LED 4m": [
             {"productId":1138, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":4}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED - WHITE": [
+        "White 60 LED 5m": [
             {"productId":1138, "analogPins":0},
             {"digitalPins":2, "pins":2},
             {"length":5}
         ],
-        //Black LED
-        "Adafruit NeoPixel Digital RGB LED Strip - Black 30 LED - BLACK": [
+        
+        "Black 30 LED 1m": [
             {"productId":1460, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":1}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - Black 30 LED - BLACK": [
+        "Black 30 LED 2m": [
             {"productId":1460, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":2}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - Black 30 LED - BLACK": [
+        "Black 30 LED 3m": [
             {"productId":1460, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":3}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - Black 30 LED - BLACK": [
+        "Black 30 LED 4m": [
             {"productId":1460, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":4}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - Black 30 LED - BLACK": [
+        "Black 30 LED 5m": [
             {"productId":1460, "analogPins":0},
             {"digitalPins":2, "pins":2},
             {"length":5}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - Black 60 LED - BLACK": [
+        "Black 60 LED 1m": [
             {"productId":1461, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":1}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - Black 60 LED - BLACK": [
+        "Black 60 LED 2m": [
             {"productId":1461, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":2}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - Black 60 LED - BLACK": [
+        "Black 60 LED 3m": [
             {"productId":1461, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":3}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - Black 60 LED - BLACK": [
+        "Black 60 LED 4m": [
             {"productId":1461, "analogPins":0},
             {"digitalPins":1, "pins":1},
             {"length":4}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip - Black 60 LED - BLACK": [
+        "Black 60 LED 5m": [
             {"productId":1461, "analogPins":0},
             {"digitalPins":2, "pins":2},
             {"length":5}
         ],
         
-        "Adafruit NeoPixel Digital RGB LED Strip 144 LED - 1m White - WHITE": [
+        "White 144 LED 1m": [
             {"productId":1507, "analogPins":0},
             {"digitalPins":2, "pins":2},
             {"length":1}
         ],
-        "Adafruit NeoPixel Digital RGB LED Strip 144 LED - 1m Black - BLACK": [
+        "Black 144 LED 1m": [
             {"productId":1506, "analogPins":0},
             {"digitalPins":2, "pins":2},
             {"length":2}
