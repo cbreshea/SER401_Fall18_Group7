@@ -49,6 +49,11 @@
 			"name" : "SoftwareSerial",
 			"AnalogPins" : 8,
 			"DigitalPins" : 10
+		},
+		{
+			"name" : "GSM",
+			"AnalogPins" : 0,
+			"DigitalPins" : 1
 		}
 
 	]
