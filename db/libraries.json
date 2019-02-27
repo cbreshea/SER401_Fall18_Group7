@@ -46,9 +46,9 @@
 			"DigitalPins" : 5
 		},
 		{
-			"name" : "SoftwareSerial",
-			"AnalogPins" : 8,
-			"DigitalPins" : 10
+			"name" : "Servo",
+			"AnalogPins" : 0,
+			"DigitalPins" : 2
 		},
 		{
 			"name" : "GSM",
