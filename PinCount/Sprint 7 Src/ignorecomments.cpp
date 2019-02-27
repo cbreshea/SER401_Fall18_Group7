@@ -20,4 +20,19 @@ while (std::getline(input_file, line))
             //look at the number
         }
     }
+
+    // I Wrote the following. I DID NOT WRITE the above code. 
+    else if (line[0] ! = '/'){
+        std::istringstream iss(line);
+        float num; // The number in the line
+
+        //while the iss is a number 
+        while ((iss >> num))
+        {
+            //look at the number that we are looking for
+        }
+
+    }
+    else 
+        break;
 }
