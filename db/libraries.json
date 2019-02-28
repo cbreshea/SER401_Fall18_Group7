@@ -54,7 +54,12 @@
 			"name" : "GSM",
 			"AnalogPins" : 0,
 			"DigitalPins" : 1
-		}
+		},
+		{
+			"name" : "Wire",
+			"AnalogPins" : 0,
+			"DigitalPins" : 2
+		},
 
 	]
 }
