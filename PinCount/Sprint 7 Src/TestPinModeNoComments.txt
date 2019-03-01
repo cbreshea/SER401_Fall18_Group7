@@ -1,0 +1,7 @@
+
+
+pinMode = (11,HIGH)
+
+pinMode = (13,HIGH)
+
+// This should only return 2 in the file
