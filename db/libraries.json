@@ -64,6 +64,11 @@
 			"name" : "WiFi",
 			"AnalogPins" : 0,
 			"DigitalPins" : 5
+		},
+		{
+			"name" : "SoftwareSerial",
+			"AnalogPins" : 0,
+			"DigitalPins" : 2
 		}
 
 	]
