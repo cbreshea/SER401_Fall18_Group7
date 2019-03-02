@@ -7,6 +7,8 @@
 // MORE COMPLETE CODE WILL COME IN THE COMING DAYS.
 
 
+/*
+
 while (std::getline(input_file, line))
 {
     if (line[0] != "#" )
@@ -36,3 +38,21 @@ while (std::getline(input_file, line))
     else 
         break;
 }
+*/
+
+// I wrote the following
+#include <iostream>
+using namespace std;
+main(){
+
+    String word = "Pin Mode";
+    fstream file("TestPinMode.txt");
+    int count = 0;
+    //if (word occurs in file){
+    // count +=1;
+
+    cout << "The number of pins used is "+ count <<;
+
+}
+
+
