@@ -10,7 +10,13 @@ int main ()
   std::smatch m;
   std::regex e ("\\b(Adafruit_NeoPixel.h)([^ ]*)");
   while (std::regex_search (s,m,e)) {
-    for (auto x:m) std::cout << x << " ";
+      for (auto x:m){
+          if(x != "/"){
+              std::cout << x << " ";
+          }else{
+              continue;
+          }
+      }
     std::cout << std::endl;
     s = m.suffix().str();
   }
