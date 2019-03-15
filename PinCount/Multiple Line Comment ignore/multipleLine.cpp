@@ -4,15 +4,15 @@
 
 using namespace std;
 
-int main()
-{
-    fstream file("sprint8test.txt");
+int main(void) {
     string line;
-    while (getline(file, line))
-    {
+    ifstream file("cat.txt");
+    if (file.is_open()){
+        while(getline(file,line)){ // This will go line by line
+            if(line.starts_with('/*')){
+                // it will go through and stop once there is a '*/'
+            }
+        }
         
-        if (line[0] == '/*') continue;
-
-        // other stuff will come in here
+        file.close();
     }
-}
