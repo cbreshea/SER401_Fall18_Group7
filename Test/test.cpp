@@ -14,6 +14,15 @@ int main ()
     for (auto x:m)
         //std::cout << x << " ";
     std::cout << "Neopixel library in use." << std::endl;
+  while (std::regex_search (s,m,e)) {
+      for (auto x:m){
+          if(x != "/"){
+              std::cout << x << " ";
+          }else{
+              continue;
+          }
+      }
+    std::cout << std::endl;
     s = m.suffix().str();
       pinCount+=2;
   }
