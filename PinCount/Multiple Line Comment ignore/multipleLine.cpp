@@ -8,6 +8,8 @@ using namespace std;
 int main(void) {
     string line;
     int count;
+    String word = "PinMode";
+    String randomBoard = "ATMEGA4609";
     ifstream file("cat.txt");
     char ch[40] , c [40];
     if (file.is_open()){
@@ -20,12 +22,13 @@ int main(void) {
             }
             // now count the number of instances the word occurs
             while (file) {
-                file >> ch;
-                if(strcmp(ch, c)==0)
+                file >> word;
+                if(strcmp(ch, word)==0)
                     count++;
-                <#statements#>
+               
             }
         }
         cout << "Number of pins used is " << count << endl;
+        cout << "The recommended board is: " << randomBoard << endl;
         file.close();
     }
