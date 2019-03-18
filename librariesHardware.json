@@ -23,6 +23,14 @@
 		{
 			"name" : "WiFi",
 			"Requires" : ["SPI"]
+		},
+		{
+			"name" : "ArduinoSound",
+			"Requires" : ["I2S"]
+		},
+		{
+			"name" : "WiFi101",
+			"Requires" : ["SPI"]
 		}
 
 	]
