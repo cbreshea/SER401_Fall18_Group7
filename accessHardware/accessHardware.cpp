@@ -18,11 +18,21 @@ int main(int argc, const char ** argv) {
 
     std::string temp = "";//variable to hold pin count from microcontroller
 
+    cout << "Libraries" << endl;
+
+    for(int i = 0; i < hard["Libraries"].size(); ++i){
+      temp = hard["Libraries"][i]["name"];//this assignment is needed to convert to c++ int
+      cout << temp << endl;
+      
+    }
+    
     for(int i = 0; i < hard["Libraries"].size(); ++i){
       temp = hard["Libraries"][i]["Requires"][0];//this assignment is needed to convert to c++ int
       cout << temp << endl;
       
     }
+
+
 
 
     return 0;
