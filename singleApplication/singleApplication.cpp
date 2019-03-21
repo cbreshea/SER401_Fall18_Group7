@@ -17,6 +17,7 @@
 using namespace std;
 
 #define MEMORY_PERCENT_BUFFER 10
+#define PIN_COUNT_PERCENT_BUFFER 10
 
 /*
 IMPORTANT NOTE:
@@ -58,15 +59,15 @@ string GetStdoutFromCommand(string cmd) {
 int GetIntFromString(string str){
    stringstream ss;
    ss << str;//put string is stringstream
-   string temp;
+   string tempMem;
    int num;
    //while end of stream has not been reached
    while(!ss.eof()){
-      ss >> temp;//get word from stream
-      if(stringstream(temp) >> num){//if an int
+      ss >> tempMem;//get word from stream
+      if(stringstream(tempMem) >> num){//if an int
          return num;
       }
-      temp = "";
+      tempMem = "";
    }
 }
 
@@ -81,10 +82,10 @@ int percentChange(int num1, int num2){
 }
 
 /*
-method to recommend a microcontroller from json files that the program will fit on. memReq is expected to be the size of the project expected to
-be put on the microcontroller and is expected to represent the number of bytes.
+method to recommend a microcontroller from json files that the program will work on. memReq is expected to be the size of the project expected to
+be put on the microcontroller and is expected to represent the number of bytes. pinReq is the number of pins required by the program
 */
-string recommendMicroController(int memReq){
+string recommendMicroController(int memReq, int pinReq){
    string mcName = "None";
    //open json files
    using json = nlohmann::json;
@@ -95,24 +96,30 @@ string recommendMicroController(int memReq){
     json tinyAvr = json::parse(tiny);
     
     int sizeRec = std::numeric_limits<int>::max();//set initial size recommendation to a high number so the first size checked will always be picked
-    int temp = 0;//variable to hold memory from microcontroller
+    int pinCountRec = std::numeric_limits<int>::max();//set initial size recommendation to a high number so the first size checked will always be picked
+    int tempMem = 0;//variable to hold memory from microcontroller
+    int tempPinCount = 0;//variable to hold pin count from microcontroller
     json microcontroller;
    
     for(int i = 0; i < megaAvr["MegaAVRs"].size(); ++i){
-      temp = megaAvr["MegaAVRs"][i]["Program Memory Size(KB)"];//this assignment is needed to convert to c++ int
-      if( memReq < (temp * 1000) ){//if program will fit in memory
-         if( temp < sizeRec){//if memory size is smaller than previously selected memory size
-            sizeRec = temp;//recommend memory size
+      tempMem = megaAvr["MegaAVRs"][i]["Program Memory Size(KB)"];//this assignment is needed to convert to c++ int
+      tempPinCount = megaAvr["MegaAVRs"][i]["Pin Count"];//this assignment is needed to convert to c++ int
+      if( memReq < (tempMem * 1000) & pinReq < tempPinCount){//if program will fit in memory and pin count
+         if( tempMem < sizeRec & tempPinCount < pinCountRec){//if memory size and pin count are smaller than previously selected memory size and pin count
+            sizeRec = tempMem;//recommend memory size
+            pinCountRec = tempPinCount;//recommend pin count
             mcName = megaAvr["MegaAVRs"][i]["Name"];//recommend microcontroller
          }
       }
     }
    
     for(int i = 0; i < tinyAvr["TinyAVRs"].size(); ++i){
-      temp = tinyAvr["TinyAVRs"][i]["Program Memory Size(KB)"];//this assignment is needed to convert to c++ int
-      if( memReq < (temp * 1000) ){//if program will fit in memory
-         if( temp < sizeRec){//if memory size is smaller than previously selected memory size
-            sizeRec = temp;//recommend memory size
+      tempMem = tinyAvr["TinyAVRs"][i]["Program Memory Size(KB)"];//this assignment is needed to convert to c++ int
+      tempPinCount = megaAvr["MegaAVRs"][i]["Pin Count"];//this assignment is needed to convert to c++ int
+      if( memReq < (tempMem * 1000) & pinReq < tempPinCount){//if program will fit in memory and in count
+         if( tempMem < sizeRec & tempPinCount < pinCountRec){//if memory size and pin count are smaller than previously selected memory size and pin count
+            sizeRec = tempMem;//recommend memory size
+            pinCountRec = tempPinCount//recommend pin count
             mcName = tinyAvr["TinyAVRs"][i]["Name"];//recommend microcontroller
          }
       }
@@ -121,7 +128,10 @@ string recommendMicroController(int memReq){
     //check if program size is close to program memory for microcontroller, if it is then bump it up to next recommendation
     //by using the previous recommending microcontroller program memory as a requirement
     if( percentChange(sizeRec, memReq) <= MEMORY_PERCENT_BUFFER ){
-      mcName = recommendMicroController(sizeRec);
+      mcName = recommendMicroController(sizeRec, pinReq);
+    }//if pin count is within buffer range then bump up to next available pin count by using recommendation as requirement for new recommendation
+    else if(percentChange(pinCountRec, pinReq) <= PIN_COUNT_PERCENT_BUFFER){
+      mcName = recommendMicroController(memReq, pinCountRec);
     }
     
     return mcName;
@@ -136,7 +146,7 @@ int main(int argc, const char ** argv) {
     //compile arduino sketch using the arduino cli, capturing stdout in string output
     string output = GetStdoutFromCommand( ("cd ./example && arduinocli compile -b arduino:avr:uno " + str + " -o main").c_str() );
     int size = GetIntFromString(output);//get file size from arduinocli output
-    string microcontroller = recommendMicroController(size);//get recommended microcontroller for program size
+    string microcontroller = recommendMicroController(size, 0);//get recommended microcontroller for program size
     //output program measured, program size, and name of recommended microcontroller
     cout << "Program: " << str << endl;
     cout << "Size: " << size << " bytes" << endl;
