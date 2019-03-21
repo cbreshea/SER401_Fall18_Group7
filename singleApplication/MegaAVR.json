@@ -1,0 +1,91 @@
+{ "MegaAVRs" : [
+	{ 
+		"Name" : "ATmega168p",
+		"Program Memory Type" : "Flash",
+		"Program Memory Size(KB)" : 16,
+		"CPU Speed (MIPS/DMIPS)" : 20,
+		"SRAM Bytes" : 1024,
+		"Data EEPROM/HEF (bytes)" : 512,
+		"Digital Communication Peripherals" : {"UARTNum" : 1, "SPINum" : 2, "I2C" : 1},
+		"Capture/Compare/PWM Peripherals" : {"Input Capture Number" : 1, "CPPNum" : 1, "PWMNum" : 6},
+		"Timers" : {"8-bit" : 2, "16-bit" : 1},
+		"Number of Comparators" : 1,
+		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
+		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
+		"Pin Count" : 32,
+		"Low Power" : true
+
+    },
+
+    { 
+		"Name" : "ATmega328p",
+		"Program Memory Type" : "Flash",
+		"Program Memory Size(KB)" : 32,
+		"CPU Speed (MIPS/DMIPS)" : 20,
+		"SRAM Bytes" : 2048,
+		"Data EEPROM/HEF (bytes)" : 1024,
+		"Digital Communication Peripherals" : {"UARTNum" : 1, "SPINum" : 2, "I2C" : 1},
+		"Capture/Compare/PWM Peripherals" : {"Input Capture Number" : 1, "CPPNum" : 1, "PWMNum" : 6},
+		"Timers" : {"8-bit" : 2, "16-bit" : 1},
+		"Number of Comparators" : 1,
+		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
+		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
+		"Pin Count" : 32,
+		"Low Power" : true
+
+    },
+
+    { 
+		"Name" : "ATmega644p",
+		"Program Memory Type" : "Flash",
+		"Program Memory Size(KB)" : 64,
+		"CPU Speed (MIPS/DMIPS)" : 20,
+		"SRAM Bytes" : 4096,
+		"Data EEPROM/HEF (bytes)" : 2048,
+		"Digital Communication Peripherals" : {"UARTNum" : 2, "SPINum" : 3, "I2C" : 1},
+		"Capture/Compare/PWM Peripherals" : {"Input Capture Number" : 1, "CPPNum" : 1, "PWMNum" : 6},
+		"Timers" : {"8-bit" : 2, "16-bit" : 1},
+		"Number of Comparators" : 1,
+		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
+		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
+		"Pin Count" : 44,
+		"Low Power" : true
+
+    },
+
+    { 
+		"Name" : "ATmega1284",
+		"Program Memory Type" : "Flash",
+		"Program Memory Size(KB)" : 128,
+		"CPU Speed (MIPS/DMIPS)" : 20,
+		"SRAM Bytes" : 16384,
+		"Data EEPROM/HEF (bytes)" : 4096,
+		"Digital Communication Peripherals" : {"UARTNum" : 2, "SPINum" : 3, "I2C" : 1},
+		"Capture/Compare/PWM Peripherals" : {"Input Capture Number" : 1, "CPPNum" : 1, "PWMNum" : 6},
+		"Timers" : {"8-bit" : 2, "16-bit" : 2},
+		"Number of Comparators" : 1,
+		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
+		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
+		"Pin Count" : 44
+	
+    },
+
+    { 
+		"Name" : "ATmega2560",
+		"Program Memory Type" : "Flash",
+		"Program Memory Size(KB)" : 256,
+		"CPU Speed (MIPS/DMIPS)" : 16,
+		"SRAM Bytes" : 8192,
+		"Data EEPROM/HEF (bytes)" : 4096,
+		"Digital Communication Peripherals" : {"UARTNum" : 4, "SPINum" : 5, "I2C" : 1},
+		"Capture/Compare/PWM Peripherals" : {"Input Capture Number" : 4, "CPPNum" : 4, "PWMNum" : 16},
+		"Timers" : {"8-bit" : 2, "16-bit" : 4},
+		"Number of Comparators" : 1,
+		"Temperature Range(C)" : {"MinTemp" : -40, "MaxTemp" : 85},
+		"Operating Voltage Range (V)" : {"MinVoltage" : 1.8, "MaxVoltage" : 5.5},
+		"Pin Count" : 100
+	
+    }
+
+]}
+
