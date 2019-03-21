@@ -1,0 +1,38 @@
+To compile the pinCount program use the following command. This compiles an executable with the name pinCount.
+the std=gnu++11 option is required for the json library to be usable.
+
+ g++ -std=gnu++11 pinCount.cpp -o pinCount
+
+run: pinCount [pin count input]
+
+Tests run:
+
+Test 1:
+Given Input: 10
+Expected Output: ATtiny3217
+Output: ATtiny3217
+
+Test 2:
+Given Input: 20
+Expected Output: ATtiny3217
+Output: ATtiny3217
+
+Test 3:
+Given Input: 23
+Expected Output: Atmega168p
+Output: Atmega168p
+
+Test 4:
+Given Input: 30
+Expected Output: Atmega644p
+Output: Atmega644p
+
+Test 5:
+Given Input: 40
+Expected Output: Atmega2560
+Output: Atmega2560
+
+Test 6:
+Given Input: 70
+Expected Output: Atmega2560
+Output: Atmega2560
