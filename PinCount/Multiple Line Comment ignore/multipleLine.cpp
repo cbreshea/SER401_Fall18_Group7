@@ -12,8 +12,8 @@ int main(void) {
     string word = "PIN";
     string randomBoard = "ATMEGA4609";
     ifstream file("simple.ino");
-    char ch[40] , c [40];
-    if (file.is_open()){
+    char ch[40];
+    if (file.is_open()){ // This is when the file is open go through the file
         while(getline(file,line)){ // This will go line by line
             if(line.starts_with('/*')){
                 // it will go through and stop once there is a '*/'
@@ -25,7 +25,7 @@ int main(void) {
             while (file) {
                 file >> word;
                 //error with strcmp() suggest removing it and using another algorithm
-                if(strcmp(ch, word)==0)
+                if(strcmp(ch, word)==0) // we are doing a string comparison
                     count++;
                
             }
