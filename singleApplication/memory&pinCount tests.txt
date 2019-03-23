@@ -1,0 +1,38 @@
+To compile the singeApplication program use the following command. This compiles an executable with the name singleApplication.
+the std=gnu++11 option is required for the json library to be usable.
+
+ g++ -std=gnu++11 singleApplication.cpp -o singleApplication
+
+run: singleApplication [memory size(bytes), pin count]
+
+Tests run:
+
+Test 1:
+test with input expected to complete in one pass.
+Given Input: 7000, 12
+Expected Output: ATtiny817
+Output: 
+
+Test 2:
+test with input expected to complete in one pass.
+Given Input: 50000, 36
+Expected Output: Atmega644p
+Output: Atmega644p
+
+Test 3:
+test with input memory within buffer range and be bumped up to next microcontroller.
+Given Input: 7500, 12
+Expected Output: ATtiny1617
+Output: ATtiny1617
+
+Test 4:
+test with input pin count within buffer range and be bumped up to next mircocontroller.
+Given Input: 7000, 22
+Expected Output: Atmega168p
+Output: Atmega168p
+
+Test 5:
+test with both inputs within buffer range and be bumped up to nexxt microcontroller..
+Given Input: 7500, 22
+Expected Output: Atmega168p
+Output: Atmega168p
