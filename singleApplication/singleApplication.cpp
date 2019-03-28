@@ -104,8 +104,9 @@ string recommendMicroController(int memReq, int pinReq){
     for(int i = 0; i < megaAvr["MegaAVRs"].size(); ++i){
       tempMem = megaAvr["MegaAVRs"][i]["Program Memory Size(KB)"];//this assignment is needed to convert to c++ int
       tempPinCount = megaAvr["MegaAVRs"][i]["Pin Count"];//this assignment is needed to convert to c++ int
-      if( memReq < (tempMem * 1000) & pinReq < tempPinCount){//if program will fit in memory and pin count
-         if( tempMem < sizeRec & tempPinCount < pinCountRec){//if memory size and pin count are smaller than previously selected memory size and pin count
+      tempMem = tempMem * 1000;//convert from KB to bytes
+      if( (memReq < tempMem) && (pinReq < tempPinCount) ){//if program will fit in memory and pin count
+         if( (tempMem <= sizeRec) && (tempPinCount <= pinCountRec) ){//if microcontroller memory size and pin count are smaller than previously selected memory size and pin count
             sizeRec = tempMem;//recommend memory size
             pinCountRec = tempPinCount;//recommend pin count
             mcName = megaAvr["MegaAVRs"][i]["Name"];//recommend microcontroller
@@ -115,16 +116,16 @@ string recommendMicroController(int memReq, int pinReq){
    
     for(int i = 0; i < tinyAvr["TinyAVRs"].size(); ++i){
       tempMem = tinyAvr["TinyAVRs"][i]["Program Memory Size(KB)"];//this assignment is needed to convert to c++ int
-      tempPinCount = megaAvr["MegaAVRs"][i]["Pin Count"];//this assignment is needed to convert to c++ int
-      if( memReq < (tempMem * 1000) & pinReq < tempPinCount){//if program will fit in memory and in count
-         if( tempMem < sizeRec & tempPinCount < pinCountRec){//if memory size and pin count are smaller than previously selected memory size and pin count
+      tempPinCount = tinyAvr["TinyAVRs"][i]["Pin Count"];//this assignment is needed to convert to c++ int
+      tempMem = tempMem * 1000;//convert from KB to bytes
+      if( (memReq < tempMem) && (pinReq < tempPinCount) ){//if program will fit in memory and in count
+         if( (tempMem <= sizeRec) && (tempPinCount <= pinCountRec) ){//if memory size and pin count are smaller than previously selected memory size and pin count
             sizeRec = tempMem;//recommend memory size
-            pinCountRec = tempPinCount//recommend pin count
+            pinCountRec = tempPinCount;//recommend pin count
             mcName = tinyAvr["TinyAVRs"][i]["Name"];//recommend microcontroller
          }
       }
     }
-    sizeRec = sizeRec * 1000;//convert from KB to bytes
     //check if program size is close to program memory for microcontroller, if it is then bump it up to next recommendation
     //by using the previous recommending microcontroller program memory as a requirement
     if( percentChange(sizeRec, memReq) <= MEMORY_PERCENT_BUFFER ){
@@ -133,7 +134,6 @@ string recommendMicroController(int memReq, int pinReq){
     else if(percentChange(pinCountRec, pinReq) <= PIN_COUNT_PERCENT_BUFFER){
       mcName = recommendMicroController(memReq, pinCountRec);
     }
-    
     return mcName;
 }
 
@@ -143,14 +143,18 @@ int main(int argc, const char ** argv) {
     string str = "";
     //get name of file to compile and measure
     str = str + argv[1];
+    string str2 = "";
+    str2 = str2 + argv[2];
     //compile arduino sketch using the arduino cli, capturing stdout in string output
-    string output = GetStdoutFromCommand( ("cd ./example && arduinocli compile -b arduino:avr:uno " + str + " -o main").c_str() );
-    int size = GetIntFromString(output);//get file size from arduinocli output
-    string microcontroller = recommendMicroController(size, 0);//get recommended microcontroller for program size
+    //string output = GetStdoutFromCommand( ("cd ./example && arduinocli compile -b arduino:avr:uno " + str + " -o main").c_str() );
+    int size = stoi(str);//get file size from arduinocli output
+    int pinCount = stoi(str2);
+    string microcontroller = recommendMicroController(size, pinCount);//get recommended microcontroller for program size
     //output program measured, program size, and name of recommended microcontroller
     cout << "Program: " << str << endl;
     cout << "Size: " << size << " bytes" << endl;
-    cout << "Recommend: " << microcontroller << endl;
+    cout << "PinCount: " << pinCount << endl;
+    cout << "Recommendation: " << microcontroller << endl;
     }
     else{
       cout << "Please enter a filename.";
