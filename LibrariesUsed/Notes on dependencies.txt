@@ -1,0 +1,10 @@
+Notes:
+*The ldd command can be used to check shared library dependencies of a program executable
+* -l option
+*JSON of library dependencies
+
+RESOURCES:
+https://www.gnu.org/software/libtool/manual/html_node/Inter_002dlibrary-dependencies.html
+http://ask.xmodulo.com/check-library-dependency-program-process-linux.html
+https://stackoverflow.com/questions/39705210/c-how-to-manage-dependencies-use-libraries-from-github-for-example
+https://linux.die.net/man/1/ldd

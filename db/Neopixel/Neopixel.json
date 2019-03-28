@@ -1,0 +1,118 @@
+{
+    "Neopixel": {
+        "White 30 LED 1m": [
+            {"productId":1376, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":1}
+        ],
+        "White 30 LED 2m": [
+            {"productId":1376, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":2}
+        ],
+        "White 30 LED 3m": [
+            {"productId":1376, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":3}
+        ],
+        "White 30 LED 4m": [
+            {"productId":1376, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":4}
+        ],
+        "White 30 LED 5m": [
+            {"productId":1376, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":5}
+        ],
+        "White 60 LED 1m": [
+            {"productId":1138, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":1}
+        ],
+        "White 60 LED 2m": [
+            {"productId":1138, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":2}
+        ],
+        "White 60 LED 3m": [
+            {"productId":1138, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":3}
+        ],
+        "White 60 LED 4m": [
+            {"productId":1138, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":4}
+        ],
+        "White 60 LED 5m": [
+            {"productId":1138, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":5}
+        ],
+        
+        "Black 30 LED 1m": [
+            {"productId":1460, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":1}
+        ],
+        "Black 30 LED 2m": [
+            {"productId":1460, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":2}
+        ],
+        "Black 30 LED 3m": [
+            {"productId":1460, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":3}
+        ],
+        "Black 30 LED 4m": [
+            {"productId":1460, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":4}
+        ],
+        "Black 30 LED 5m": [
+            {"productId":1460, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":5}
+        ],
+        "Black 60 LED 1m": [
+            {"productId":1461, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":1}
+        ],
+        "Black 60 LED 2m": [
+            {"productId":1461, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":2}
+        ],
+        "Black 60 LED 3m": [
+            {"productId":1461, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":3}
+        ],
+        "Black 60 LED 4m": [
+            {"productId":1461, "analogPins":0},
+            {"digitalPins":1, "pins":1},
+            {"length":4}
+        ],
+        "Black 60 LED 5m": [
+            {"productId":1461, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":5}
+        ],
+        
+        "White 144 LED 1m": [
+            {"productId":1507, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":1}
+        ],
+        "Black 144 LED 1m": [
+            {"productId":1506, "analogPins":0},
+            {"digitalPins":2, "pins":2},
+            {"length":2}
+        ]
+        
+        
+    }
+}

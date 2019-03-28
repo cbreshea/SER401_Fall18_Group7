@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: arduinolibraries
 -- ------------------------------------------------------
--- Server version	8.0.15
+-- Server version	8.0.11
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,45 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Libraries`
+-- Table structure for table `TFT`
 --
 
-DROP TABLE IF EXISTS `Libraries`;
+DROP TABLE IF EXISTS `TFT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Libraries` (
-  `LibraryID` int(11) DEFAULT NULL,
-  `LibraryName` varchar(255) DEFAULT NULL,
-  `AnalogPins` int(11) DEFAULT NULL,
-  `DigitalPins` int(11) DEFAULT NULL,
-  `preSetPins` int(11) DEFAULT NULL
+CREATE TABLE `TFT` (
+  `CS` int(11) DEFAULT NULL,
+  `DC` int(11) DEFAULT NULL,
+  `SCLK` int(11) DEFAULT NULL,
+  `MOSI` int(11) DEFAULT NULL,
+  `RESET` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-INSERT INTO 'Libraries'
-VALUES (1, 'SPI', 0, 4, 0);
---Liquidcrystal can either take 4 or 8 digital pins based on the constructor called in code
-INSERT INTO 'Libraries'
-VALUES (2, 'LiquidCrystal', 0, 4, 0);
-INSERT INTO 'Libraries'
-VALUES (3, 'LiquidCrystal', 0, 8, 0);
-INSERT INTO 'Libraries'
-VALUES (3, 'Ethernet', 0, 5, 0);
-INSERT INTO 'Libraries'
-VALUES (4, 'Stepper', 0, 2, 0);
-INSERT INTO 'Libraries'
-VALUES (5, 'Stepper', 0, 4, 0);
-INSERT INTO 'Libraries'
-VALUES (6, 'SD', 0, 5, 0)
-
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Libraries`
+-- Dumping data for table `TFT`
 --
 
-LOCK TABLES `Libraries` WRITE;
-/*!40000 ALTER TABLE `Libraries` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Libraries` ENABLE KEYS */;
+LOCK TABLES `TFT` WRITE;
+/*!40000 ALTER TABLE `TFT` DISABLE KEYS */;
+/*!40000 ALTER TABLE `TFT` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -66,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-11 18:58:12
+-- Dump completed on 2019-02-16 14:27:31
