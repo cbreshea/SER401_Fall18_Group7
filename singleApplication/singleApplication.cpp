@@ -137,26 +137,26 @@ string recommendMicroController(int memReq, int pinReq){
     return mcName;
 }
 
-string[] getLibraries(string fileName){
+//function to detect the libraries included in a project
+vector<string> getLibraries(string fileName){
    string word;
 	bool isLibrary = false;
 	ifstream inFile;
-   string[] libraries = [];
-
+   vector<string> libraries;
 	//inFile.open(filePath);
 	inFile.open(fileName);
 	//inFile.open("D:\\IDE Workspaces\\test\\src\\test.cpp");
 	//D:\IDE Workspaces\test\src\test.cpp
 
 	if (!inFile) {//file could not be opened
-	    cout << "There was an issue opening the file";
+	    cout << "There was an issue opening the file"<< endl;
 	    exit(1);
 	}
 
 	while (inFile >> word) {
 		if (isLibrary){
 		word = word.substr(1, word.size() - 2);//get library name
-			libraries = addStringToArray(libraries, word);//add library to array
+			libraries.push_back(word);//add library to vector
 			isLibrary = false;
 		}
 		if (word.compare("#include") == 0){
@@ -167,16 +167,30 @@ string[] getLibraries(string fileName){
    return libraries;
 }
 
-//function to add a string to an array
-string[] addStringToArray(string[] array, string item){
-   string[] newArray = [array.size() + 1];//create array with size for one more string
-   int i;
-   //copy elements from old array to new array
-   for(i = 0; i < array.size(); i++){
-      newArray[i] = array[i];
+//struct to hold pin count information
+struct pinCount {int digitalPins; int analogPins;};
+
+//function to estimate pin count using libraries.json and detected libraries
+pinCount getPinCount(vector<string> libraries){
+   //open json files
+   using json = nlohmann::json;
+   std::ifstream lib("libraries.json");
+   //read json objects from json files
+   json libPins = json::parse(lib);
+   int j;
+   pinCount pins = {0,0};//instantiate pinCount struct
+   for(auto const& name: libraries){//iterate through libraries found
+      for(j = 0; j < libPins["Libraries"].size(); j++){//iterate through libraries.json
+         if(name.substr(0,name.length()-2).compare(libPins["Libraries"][j]["name"]) == 0){//if names of libraries match
+            int analog = libPins["Libraries"][j]["AnalogPins"];//assignment needed to convert from json value to int
+            int digital = libPins["Libraries"][j]["DigitalPins"];//assignment needed to convert from json value to int
+            //add pins from library to pin count
+            pins.analogPins += analog;
+            pins.digitalPins += digital;
+         }
+      }
    }
-   newArray[newArray.size() - 1] = item//add item to end of array
-   return newArray
+   return pins;
 }
 
 int main(int argc, const char ** argv) {
@@ -185,17 +199,21 @@ int main(int argc, const char ** argv) {
     string str = "";
     //get name of file to compile and measure
     str = str + argv[1];
-    string str2 = "";
-    str2 = str2 + argv[2];
     //compile arduino sketch using the arduino cli, capturing stdout in string output
-    //string output = GetStdoutFromCommand( ("cd ./example && arduinocli compile -b arduino:avr:uno " + str + " -o main").c_str() );
-    int size = stoi(str);//get file size from arduinocli output
-    int pinCount = stoi(str2);
-    string microcontroller = recommendMicroController(size, pinCount);//get recommended microcontroller for program size
+    string output = GetStdoutFromCommand( ("cd ./example && arduinocli compile -b arduino:avr:uno " + str + " -o main").c_str() );
+    int size = GetIntFromString(output);//get file size from arduinocli output
+    vector<string> libraries = getLibraries("./example/" + str);
+    pinCount pins = getPinCount(libraries);
+    string microcontroller = recommendMicroController(size, pins.analogPins + pins.digitalPins);//get recommended microcontroller for program size and pin count
     //output program measured, program size, and name of recommended microcontroller
     cout << "Program: " << str << endl;
     cout << "Size: " << size << " bytes" << endl;
-    cout << "PinCount: " << pinCount << endl;
+    cout << "Libraries detected: " << endl;
+    for(auto const& lib: libraries){
+      cout << lib << endl;
+    }
+    cout << "Estimated Analog Pins Required: " << pins.analogPins << endl;
+    cout << "Estimated Digital Pins Required: " << pins.digitalPins << endl;
     cout << "Recommendation: " << microcontroller << endl;
     }
     else{
