@@ -1,47 +1,9 @@
 {
     "Neopixel": {
-        "White 30 LED 1m": [
-            {"productId":1376, "analogPins":0},
-            {"digitalPins":1, "pins":1},
-            {"length":1}
-        ],
-        "White 30 LED 2m": [
-            {"productId":1376, "analogPins":0},
-            {"digitalPins":1, "pins":1},
-            {"length":2}
-        ],
-        "White 30 LED 3m": [
-            {"productId":1376, "analogPins":0},
-            {"digitalPins":1, "pins":1},
-            {"length":3}
-        ],
-        "White 30 LED 4m": [
-            {"productId":1376, "analogPins":0},
-            {"digitalPins":1, "pins":1},
-            {"length":4}
-        ],
-        "White 30 LED 5m": [
-            {"productId":1376, "analogPins":0},
-            {"digitalPins":2, "pins":2},
-            {"length":5}
-        ],
-        "White 60 LED 1m": [
-            {"productId":1138, "analogPins":0},
-            {"digitalPins":1, "pins":1},
-            {"length":1}
-        ],
-        "White 60 LED 2m": [
-            {"productId":1138, "analogPins":0},
-            {"digitalPins":1, "pins":1},
-            {"length":2}
-        ],
-        "White 60 LED 3m": [
-            {"productId":1138, "analogPins":0},
-            {"digitalPins":1, "pins":1},
-            {"length":3}
-        ]
-       
-        
-        
+        "Neopixel": 
+        [
+            {"analogPins":0},
+            {"digitalPins":1, "pins":1}
+        ]     
     }
 }
