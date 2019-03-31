@@ -22,17 +22,30 @@ int main(int argc, const char ** argv) {
     json temp2 = 0;//variable to hold peripheral info from microcontroller
 
     for(int i = 0; i < megaAvr["MegaAVRs"].size(); ++i){
-      temp = megaAvr["MegaAVRs"][i]["Digital Communication Peripherals"];//this assignment is needed to convert to c++ int
+      temp1 = megaAvr["MegaAVRs"][i]["Digital Communication Peripherals"].size();//this assignment is needed to convert to c++ int
       cout << temp1 << endl;
       
     }
 
 
     for(int i = 0; i < tinyAvr["TinyAVRs"].size(); ++i){
-      temp = tinyAvr["TinyAVRs"][i]["Digital Communication Peripherals"];//this assignment is needed to convert to c++ int
+      temp2 = tinyAvr["TinyAVRs"][i]["Digital Communication Peripherals"].size();//this assignment is needed to convert to c++ int
       cout << temp2 << endl;
       
     }
+
+
+    // access each one
+    cout << " " << endl;
+    int size = 3;
+    for(int i = 0; i < megaAvr["MegaAVRs"].size(); ++i){
+      for(int j = 0; j < 3; j++){
+      	cout << megaAvr["MegaAVRs"][i]["Digital Communication Peripherals"][j] << endl;
+      }
+      cout << " " <<endl;
+    }  
+
+
 
     return 0;
 }
