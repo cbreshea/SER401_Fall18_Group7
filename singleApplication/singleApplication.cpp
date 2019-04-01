@@ -204,16 +204,36 @@ int main(int argc, const char ** argv) {
     int size = GetIntFromString(output);//get file size from arduinocli output
     vector<string> libraries = getLibraries("./example/" + str);
     pinCount pins = getPinCount(libraries);
-    string microcontroller = recommendMicroController(size, pins.analogPins + pins.digitalPins);//get recommended microcontroller for program size and pin count
-    //output program measured, program size, and name of recommended microcontroller
-    cout << "Program: " << str << endl;
-    cout << "Size: " << size << " bytes" << endl;
+    //indicate libraries detected
     cout << "Libraries detected: " << endl;
     for(auto const& lib: libraries){
       cout << lib << endl;
     }
-    cout << "Estimated Analog Pins Required: " << pins.analogPins << endl;
-    cout << "Estimated Digital Pins Required: " << pins.digitalPins << endl;
+    //prompt user to confirm pin count estimation
+    cout << "Pin requirements estimated as " << pins.digitalPins << " digital pins and " << pins.analogPins << "analog pins." << endl;
+    cout << "Is this correct(Y/N)?" << endl;
+    char answer = '';
+    while(answer != 'y' | answer != 'Y' | answer != 'n' | answer != 'N'){//wait until user answers the prompt
+      scanf("%c", &answer);//get answer
+    }
+    if(answer == 'N' | answer == 'n'){//if estimation was wrong, prompt user for correct values
+      int analog, digital;
+      //prompt user for correct values for pin count
+      cout << "Please enter the correct values." << endl;
+      cout << "How many digital pins does your project require?" << endl;
+      scanf("%d", digital);//get digital pins
+      cout << "How many analog pins does your project require?" << endl;
+      scanf("%d", analog);//get analog pins
+      //set values for recommendation
+      pins.analogPins = analog;
+      pins.digitalPins = digital;
+    }
+    string microcontroller = recommendMicroController(size, pins.analogPins + pins.digitalPins);//get recommended microcontroller for program size and pin count
+    //output program measured, program size, and name of recommended microcontroller
+    cout << "Program: " << str << endl;
+    cout << "Size: " << size << " bytes" << endl;
+    cout << "Analog Pins Required: " << pins.analogPins << endl;
+    cout << "Digital Pins Required: " << pins.digitalPins << endl;
     cout << "Recommendation: " << microcontroller << endl;
     }
     else{
