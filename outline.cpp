@@ -17,3 +17,12 @@ main
 	Everything else 
 	// entire github directory 
 
+	// Everything is now merged, so now we can make it look like this now:
+
+	Main
+		PROGARM	
+		Database 
+
+	Everything else
+		files
+
