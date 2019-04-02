@@ -1,6 +1,0 @@
-dog
-//dog
-/*this 
-  is
-  dog*/	
-dog
