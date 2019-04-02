@@ -212,18 +212,44 @@ int main(int argc, const char ** argv) {
     //prompt user to confirm pin count estimation
     cout << "Pin requirements estimated as " << pins.digitalPins << " digital pins and " << pins.analogPins << "analog pins." << endl;
     cout << "Is this correct(Y/N)?" << endl;
-    char answer = '';
-    while(answer != 'y' | answer != 'Y' | answer != 'n' | answer != 'N'){//wait until user answers the prompt
-      scanf("%c", &answer);//get answer
+    char answer = ' ';
+    cin >> answer;//get answer
+    while(!cin.fail() && answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N'){//wait until prompt is answered with yes or no
+      cout << "Please answer yes or no(Y/N)." << endl;//prompt for input
+      cin >> answer;//get answer
     }
     if(answer == 'N' | answer == 'n'){//if estimation was wrong, prompt user for correct values
       int analog, digital;
+      char end;
       //prompt user for correct values for pin count
+      bool valid = false;
+      cin.clear();
       cout << "Please enter the correct values." << endl;
-      cout << "How many digital pins does your project require?" << endl;
-      scanf("%d", digital);//get digital pins
-      cout << "How many analog pins does your project require?" << endl;
-      scanf("%d", analog);//get analog pins
+      do{
+         cout << "How many digital pins does your project require?" << endl;
+         cin >> digital;
+         if(cin.good()){
+            valid = true;
+         }
+         else{
+            cin.clear();//reset cin
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');//clear cin
+            cout << "Please enter an integer." << endl;
+         }
+      }while(!valid);
+      valid = false;
+      do{
+         cout << "How many analog pins does your project require?" << endl;
+         cin >> analog;
+         if(cin.good()){
+            valid = true;
+         }
+         else{
+            cin.clear();//reset cin
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');//clear cin
+            cout << "Please enter an integer." << endl;
+         }
+      }while(!valid);
       //set values for recommendation
       pins.analogPins = analog;
       pins.digitalPins = digital;
