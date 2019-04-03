@@ -21,7 +21,7 @@ int main(int argc, const char ** argv) {
     json temp1 = 0;//variable to hold peripheral info from microcontroller
     json temp2 = 0;//variable to hold peripheral info from microcontroller
 
-    for(int i = 0; i < megaAvr["MegaAVRs"].size(); ++i){
+    /*for(int i = 0; i < megaAvr["MegaAVRs"].size(); ++i){
       temp1 = megaAvr["MegaAVRs"][i]["Digital Communication Peripherals"].size();//this assignment is needed to convert to c++ int
       cout << temp1 << endl;
       
@@ -43,7 +43,18 @@ int main(int argc, const char ** argv) {
       	cout << megaAvr["MegaAVRs"][i]["Digital Communication Peripherals"][j] << endl;
       }
       cout << " " <<endl;
-    }  
+    }*/
+
+    cout << " " << endl;
+    int size = 3;
+    for(int i = 0; i < megaAvr["MegaAVRs"].size(); ++i){
+      
+      cout << megaAvr["MegaAVRs"][i]["Number of UART"] << endl;
+      
+      cout << " " <<endl;
+    }
+
+
 
 
 
