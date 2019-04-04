@@ -1,4 +1,5 @@
-// Please note this was originally a text file. now it is an .ino file
+// We are now going to disreguard this .ino file as it no longer serves purpose
+
 
 void setup(){
 
@@ -6,6 +7,5 @@ pinMode = (11,HIGH)
 
 pinMode = (13,HIGH)
 
-// This should only return 2 in the file
 }
 

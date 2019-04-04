@@ -1,19 +1,11 @@
-
-/*
-
-This is originally a TestPinMode.txt and now it is an .ino file
-so that it now follows arduino file naming conventions. 
-We are talking about pinMode
-pinMode should not be counted 
-Here so the only pinMode that 
-should be counted are the two are below
-*/
+// Here is an example ino file that is using two pins
 
 void setup(){
 pinMode = (11,OUTPUT)
 
 pinMode = (13,OUTPUT)
 }
+
 void loop(){
 digitalWrite(11, HIGH);
 delay(1000);
@@ -23,5 +15,8 @@ digitalWrite(11, LOW);
 delay(1000);
 digitalWrite(13, LOW);
 delay(1000);
+
+Serail.print("This is the end of the file, it shall now output the number of pins used and the memory usage");
+}
 
 // End of the file
