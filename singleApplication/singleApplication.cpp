@@ -220,42 +220,71 @@ int main(int argc, const char ** argv) {
     }
     if(answer == 'N' | answer == 'n'){//if estimation was wrong, prompt user for correct values
       int analog, digital;
+      string input;
       char end;
       //prompt user for correct values for pin count
       bool valid = false;
-      cin.clear();
+      bool isInt = true;
+      cin.clear();//clear cin
+      cin.ignore(numeric_limits<streamsize>::max(),'\n');//clear cin
       cout << "Please enter the correct values." << endl;
       do{
          cout << "How many digital pins does your project require?" << endl;
-         cin >> digital;
-         if(cin.good()){
+         getline(cin, input);//get input
+         int i;
+         for(i = 0; i < input.length(); i++){//iterate through input string
+            if(input[i] < 48 || input[i] > 57){//character that is not number or space
+               isInt = false;//found not number or space character, input is invalid
+               break;
+            }
+         }
+         if(input.size() == 0){//in case user just hit enter without input
+            isInt = false;
+         }
+         if(cin.good() && isInt){//input is valid and cin had no errors
             valid = true;
+            stringstream ss(input);//create stringstream for conversion
+            ss >> digital;//read int from string
          }
          else{
             cin.clear();//reset cin
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');//clear cin
+            isInt = true;//reset for next input check
             cout << "Please enter an integer." << endl;
          }
-      }while(!valid);
+      }while(!valid);//while valid input has not been entered
+      
       valid = false;
+      isInt = true;
       do{
          cout << "How many analog pins does your project require?" << endl;
-         cin >> analog;
-         if(cin.good()){
+         getline(cin, input);//get input
+         int i;
+         for(i = 0; i < input.length(); i++){//iterate through input
+            if(input[i] < 48 || input[i] > 57){//character that is not number or space
+               isInt = false;//found not number or space character, input is invalid
+               break;
+            }
+         }
+         if(input.size() == 0){//in case user just hit enter without input
+            isInt = false;
+         }
+         if(cin.good() && isInt){//input is valid and cin had no errors
             valid = true;
+            stringstream ss(input);//create stringstream for conversion
+            ss >> analog;//read int from string
          }
          else{
             cin.clear();//reset cin
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');//clear cin
+            isInt = true;//reset for next input check
             cout << "Please enter an integer." << endl;
          }
-      }while(!valid);
+      }while(!valid);//while valid input has not been entered
       //set values for recommendation
       pins.analogPins = analog;
       pins.digitalPins = digital;
     }
     string microcontroller = recommendMicroController(size, pins.analogPins + pins.digitalPins);//get recommended microcontroller for program size and pin count
-    //output program measured, program size, and name of recommended microcontroller
+    //output program measured, program size, pin count,and name of recommended microcontroller
     cout << "Program: " << str << endl;
     cout << "Size: " << size << " bytes" << endl;
     cout << "Analog Pins Required: " << pins.analogPins << endl;
