@@ -1,0 +1,37 @@
+{
+	"Libraries" : [
+		{
+			"name" : "SPI",
+			"Requires" : "SPI"
+		},
+		{
+			"name" : "Ethernet",
+			"Requires" : "SPI"
+		},
+		{
+			"name" : "SD",
+			"Requires" : "SPI"
+		},
+		{
+			"name" : "TFT",
+			"Requires" : "SPI"
+		},
+		{
+			"name" : "Wire",
+			"Requires" : "I2C"
+		},
+		{
+			"name" : "WiFi",
+			"Requires" : "SPI"
+		},
+		{
+			"name" : "ArduinoSound",
+			"Requires" : "I2S"
+		},
+		{
+			"name" : "WiFi101",
+			"Requires" : "SPI"
+		}
+
+	]
+}
