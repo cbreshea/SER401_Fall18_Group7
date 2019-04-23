@@ -44,7 +44,11 @@
 			"name" : "SoftwareSerial",
 			"AnalogPins" : 0,
 			"DigitalPins" : 2
-		}
-
+		},
+        {
+            "name" : "Adafruit_NeoPixel",
+            "AnalogPins" : 0,
+            "DigitalPins" : 1
+        }
 	]
 }
