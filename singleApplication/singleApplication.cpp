@@ -225,31 +225,42 @@ pinCount getPinCount(vector<string> libraries){
 vector<int> countPeripherals(vector<string> libraries){
   
    vector<int> amount;
+
+   using json = nlohmann::json;
+   std::ifstream libH("librariesHardware.json"); 
+   //read json objects from json files
+   json libHardware = json::parse(libH);
+
    int UART = 0;
    int SPI = 0;
    int I2C = 0;
-   
-   for(auto const& lib: libraries){
-     if(lib == "SPI.h"){
-      SPI++;
-     }else if(lib == "Ethernet.h"){
-      SPI++;
-     }else if(lib == "SD.h"){
-      SPI++;
-     }else if(lib == "TFT.h"){
-      SPI++;
-     }else if(lib == "Wire.h"){
-      I2C++;
-     }else if(lib == "WiFi.h"){
-      SPI++;
-     }else if(lib == "WiFi101.h"){
-      SPI++;
-     }
-   }
+
+   string temp = "";
+   string temp2 = "";
+   string final = ".h";
+
+   for(int i = 0; i < libHardware["Libraries"].size(); ++i){
+      temp = libHardware["Libraries"][i]["name"];//this assignment is needed to convert to c++ int
+      temp2 = libHardware["Libraries"][i]["Requires"];
+      final = temp+final;
+      for(auto const& lib: libraries){
+        if(lib == final){
+          if(temp2 == "SPI"){
+            SPI++;
+          }else if(temp2 == "I2C"){
+            I2C++;
+          }else if(temp2 == "UART"){
+            UART++;
+          }
+        }
+      }
+      final = ".h";
+      
+    }
 
    amount.push_back(UART);
    amount.push_back(SPI);
-   amount.push_back(I2C);
+   amount.push_back(I2C);  
 
    return amount;
 }
