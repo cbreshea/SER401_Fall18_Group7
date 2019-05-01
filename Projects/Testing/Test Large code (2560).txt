@@ -1,0 +1,36 @@
+Code tested from here:
+http://rztronics.com/arduino-3d-printer-code-software-and-schematics/
+
+Expected chip recommendation:
+ATMega2560
+
+Reason for Recommendation:
+Most likely size
+
+-----------------------------------------------
+
+Test for pins requirments
+
+Code:
+#include "library" X10+
+
+Expected chip recommendation:
+ATMega2560
+
+Reason for Recommendation:
+pins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

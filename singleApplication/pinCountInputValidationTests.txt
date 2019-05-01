@@ -1,0 +1,61 @@
+To compile the singeApplication program use the following command. This compiles an executable with the name singleApplication.
+the std=gnu++11 option is required for the json library to be usable.
+
+ g++ -std=gnu++11 singleApplication.cpp -o singleApplication
+
+run: singleApplication [file name].[file extension]
+
+For this test I will use a Blink.ino file that includes the SPI and Ethernet libraries so the detected
+requirements will be 9 digital pins.
+
+Tests run:
+
+Test 1:
+PASSED
+test to ensure recommendation without modifying requirements is still the same.
+Given Input:  confirm pin count as correct
+Expected Output: 9 digital, 0 analog, ATtiny817
+Output: 9 digital, 0 analog, ATtiny817
+
+Test 2:
+PASSED
+test changing recommendation within parameters of previously recommended microcontroller
+does not change recommendation.
+Given Input: 6 digital, 6 analog
+Expected Output: 6 digital, 6 analog, ATtiny817
+Output: 
+
+Test 3:
+PASSED
+test recommendation bump still works.
+Given Input: 18 digital, 4 analog
+Expected Output: 18 digital, 4 analog, ATmega168p
+Output: 18 digital, 4 analog, Atmega 168p
+
+Test 4:
+PASSED
+test detection of non integer input before number
+Given Input: d18 digital, d4 analog
+Expected Output: ask to enter integer, 18 digital, 4 analog, Atmga168p
+Output:  ask to enter integer, 18 digital, 4 analog, Atmega168p
+
+Test 5:
+FAILED
+test detection of non integer input after number
+Given Input: 18d digital, 4d analog
+Expected Output: ask to enter integer, 18 digital, 4 analog, Atmga168p
+Output: 18 digital, d left in input buffer, ask to confirm  4 analog, 
+
+Test 6:
+FAILED
+test detection of non integer input in the middle of number
+Given Input: 1d2 digital, 1d0 analog
+Expected Output: ask to enter integer, 12 digital, 10 analog, Atmga168p
+Output: 1 digital, d2 left in input buffer,  10 analog, 
+
+Test 7:
+PASSED
+test detection of no input
+Given Input:  digital,  analog then 12 digital, 10 analog
+Expected Output: wait until input entered, 12 digital, 10 analog, Atmga168p
+Output: 12 digital, 10 analog, 
