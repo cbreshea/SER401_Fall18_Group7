@@ -274,7 +274,7 @@ int main(int argc, const char ** argv) {
     //get name of file to compile and measure
     str = str + argv[1];
     //compile arduino sketch using the arduino cli, capturing stdout in string output
-    string output = GetStdoutFromCommand( ("cd ./example && arduinocli compile -b arduino:avr:uno " + str + " -o main").c_str() );
+    string output = GetStdoutFromCommand( ("arduinocli compile -b arduino:avr:uno " + str + " -o main").c_str() );
     int size = GetIntFromString(output);//get file size from arduinocli output
     vector<string> libraries = getLibraries("./example/" + str);
     pinCount pins = getPinCount(libraries);
